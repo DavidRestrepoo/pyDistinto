@@ -1,0 +1,29 @@
+$container-max: 1280px;
+
+
+$color-primary: #bbc3ff;               // Kinetic Blue
+$color-primary-container: #2d4bff;
+$color-primary-on: #001b97;
+$color-secondary: #c6c6c7;
+$color-background: #101319;            // base dark
+$color-surface: #1d2026;
+$color-surface-high: #272a30;
+$color-surface-highest: #32353b;
+$color-on-surface: #e1e2ea;
+$color-outline: #8e8fa2;
+
+// Rounded corners
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;   // per design spec
+$radius-xl: 1.5rem;
+
+// Spacing (based on design)
+$spacing-gutter: 1.5rem;
+$spacing-section: 5rem;   // vertical padding for sections
+$spacing-stack-sm: 0.5rem;
+$spacing-stack-md: 1.5rem;
+$spacing-stack-lg: 3rem;
+
+// Gradients (optional)
+$gradient-primary: linear-gradient(135deg, $color-primary, $color-primary-container);

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Distinto | Agencia Creativa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#32353b",
+                    "outline-variant": "#444656",
+                    "on-primary-fixed-variant": "#0029d2",
+                    "on-secondary-fixed-variant": "#454747",
+                    "background": "#101319",
+                    "on-primary-container": "#dee0ff",
+                    "surface-container-highest": "#32353b",
+                    "inverse-primary": "#2343f9",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-low": "#191c22",
+                    "surface-dim": "#101319",
+                    "error": "#ffb4ab",
+                    "primary": "#bbc3ff",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-container": "#e1e1e7",
+                    "on-primary-fixed": "#000d5f",
+                    "on-tertiary": "#2f3035",
+                    "tertiary": "#c6c6cc",
+                    "on-surface-variant": "#c5c5d9",
+                    "surface": "#101319",
+                    "secondary-container": "#454747",
+                    "tertiary-container": "#636469",
+                    "on-tertiary-fixed": "#1a1c20",
+                    "on-tertiary-fixed-variant": "#45474b",
+                    "secondary": "#c6c6c7",
+                    "surface-tint": "#bbc3ff",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-container-high": "#272a30",
+                    "surface-bright": "#363940",
+                    "primary-fixed": "#dfe0ff",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-container": "#1d2026",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#e1e2ea",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c6c6cc",
+                    "on-background": "#e1e2ea",
+                    "on-secondary": "#2f3131",
+                    "outline": "#8e8fa2",
+                    "on-error": "#690005",
+                    "on-primary": "#001b97",
+                    "surface-container-lowest": "#0b0e14",
+                    "inverse-surface": "#e1e2ea",
+                    "tertiary-fixed": "#e2e2e8",
+                    "inverse-on-surface": "#2d3037",
+                    "primary-fixed-dim": "#bbc3ff",
+                    "primary-container": "#2d4bff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "1.5rem",
+                    "section-padding": "5rem",
+                    "stack-lg": "3rem",
+                    "margin-mobile": "1rem",
+                    "stack-md": "1.5rem",
+                    "stack-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "label-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .grid-pattern {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(35, 67, 249, 0.15) 0%, rgba(16, 19, 25, 1) 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(35, 67, 249, 0.4);
+            filter: brightness(1.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(187, 195, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<header class="bg-background/80 backdrop-blur-md font-body-md text-body-md docked full-width top-0 sticky z-50 border-b border-white/10 shadow-sm">
+<nav class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-black text-on-background tracking-tighter uppercase">
+                Distinto
+            </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300" href="#inicio">Inicio</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#nosotros">Nosotros</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#servicios">Servicios</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold text-label-lg btn-glow active:scale-95 transition-all">
+                ¡HABLEMOS!
+            </button>
+</nav>
+</header>
+<main>
+<!-- Section 1: Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-gutter overflow-hidden" id="inicio">
+<!-- Background Layer -->
+<div class="absolute inset-0 grid-pattern opacity-40"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 max-w-4xl mx-auto space-y-stack-md pt-20">
+<h1 class="font-headline-xl text-headline-xl text-glow uppercase tracking-tighter">
+                    ¿TIENES UNA IDEA PERO NO TIENES CLARO CÓMO POTENCIARLA?
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Te escuchamos y detectamos lo que realmente necesitas, traducimos tu necesidad en objetivos claros y alcanzables, de principio a fin, sumando estrategia y creatividad en cada paso, diseñado y ejecutando soluciones creativas viables.
+                </p>
+<div class="pt-stack-md">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-lg font-bold text-headline-sm btn-glow active:scale-95 transition-all">
+                        ¡HABLEMOS!
+                    </button>
+</div>
+</div>
+<!-- Client Logos in Hero -->
+<div class="relative z-10 mt-auto pb-stack-lg w-full max-w-container-max mx-auto px-gutter">
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-50">
+<img alt="Logo Hemo Sthetic" class="h-12 w-auto grayscale brightness-200 hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS_1zyrDKcf39p8qDY_hX7TivaFHpdkZgyH0N4po4leXW5MHojZG_2odoxipFghgJvCXZdzEL35tybEJc7gs5AqPlsutrsaTUlw3EQdnxezzXltIs6vxoVW3NRU0FfOSa8VqhDLmR7UuI0Xai4_faJqHHKQSHfAQMvl_gFVGQNES1jMcSQt6INjfh36RXBwI-ADylDQDLjoDc4djRpQpmoZUQc5090Lmh05c0looBlBiLCFuGYKhHIidAeo_Wq6gH1Uxyt7k85MNI"/>
+<img alt="Logo Campo Futuro" class="h-12 w-auto grayscale brightness-200 hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS_1zyrDKcf39p8qDY_hX7TivaFHpdkZgyH0N4po4leXW5MHojZG_2odoxipFghgJvCXZdzEL35tybEJc7gs5AqPlsutrsaTUlw3EQdnxezzXltIs6vxoVW3NRU0FfOSa8VqhDLmR7UuI0Xai4_faJqHHKQSHfAQMvl_gFVGQNES1jMcSQt6INjfh36RXBwI-ADylDQDLjoDc4djRpQpmoZUQc5090Lmh05c0looBlBiLCFuGYKhHIidAeo_Wq6gH1Uxyt7k85MNI"/>
+<img alt="Logo Leon Viajero" class="h-12 w-auto grayscale brightness-200 hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS_1zyrDKcf39p8qDY_hX7TivaFHpdkZgyH0N4po4leXW5MHojZG_2odoxipFghgJvCXZdzEL35tybEJc7gs5AqPlsutrsaTUlw3EQdnxezzXltIs6vxoVW3NRU0FfOSa8VqhDLmR7UuI0Xai4_faJqHHKQSHfAQMvl_gFVGQNES1jMcSQt6INjfh36RXBwI-ADylDQDLjoDc4djRpQpmoZUQc5090Lmh05c0looBlBiLCFuGYKhHIidAeo_Wq6gH1Uxyt7k85MNI"/>
+<img alt="Logo American Wolf" class="h-12 w-auto grayscale brightness-200 hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS_1zyrDKcf39p8qDY_hX7TivaFHpdkZgyH0N4po4leXW5MHojZG_2odoxipFghgJvCXZdzEL35tybEJc7gs5AqPlsutrsaTUlw3EQdnxezzXltIs6vxoVW3NRU0FfOSa8VqhDLmR7UuI0Xai4_faJqHHKQSHfAQMvl_gFVGQNES1jMcSQt6INjfh36RXBwI-ADylDQDLjoDc4djRpQpmoZUQc5090Lmh05c0looBlBiLCFuGYKhHIidAeo_Wq6gH1Uxyt7k85MNI"/>
+<img alt="Logo MultiEncanto" class="h-12 w-auto grayscale brightness-200 hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS_1zyrDKcf39p8qDY_hX7TivaFHpdkZgyH0N4po4leXW5MHojZG_2odoxipFghgJvCXZdzEL35tybEJc7gs5AqPlsutrsaTUlw3EQdnxezzXltIs6vxoVW3NRU0FfOSa8VqhDLmR7UuI0Xai4_faJqHHKQSHfAQMvl_gFVGQNES1jMcSQt6INjfh36RXBwI-ADylDQDLjoDc4djRpQpmoZUQc5090Lmh05c0looBlBiLCFuGYKhHIidAeo_Wq6gH1Uxyt7k85MNI"/>
+</div>
+</div>
+</section>
+<!-- Section 2: Quiénes Somos -->
+<section class="bg-surface-container-lowest py-section-padding px-gutter relative" id="nosotros">
+<div class="max-w-4xl mx-auto text-center glass-card p-12 md:p-24 rounded-xl border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+<h2 class="font-headline-xl text-headline-xl uppercase mb-stack-lg tracking-tighter">
+                    ¡QUIENES SOMOS!
+                </h2>
+<div class="space-y-stack-md font-body-lg text-body-lg text-on-surface-variant">
+<p>Somos una agencia creativa enfocada en trabajar con marcas que se atreven a desafiar lo común.</p>
+<p>En Dist!nto, rompemos moldes escuchándote de verdad y creando ideas que llegan justo a lo que buscas.</p>
+<p class="font-bold text-on-background">Estrategia, diseño y creatividad que impacta, emociona y deja huella.</p>
+</div>
+<img alt="Visual representative of the team" class="hidden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwgrD3PMa0aBnrQ8FcuE_RNQ5OyQWkd_2uqK7sl3n8iSOFZBxoIM11qKTMzUvaZ4LygBDh8iZGsjyUhRWlOLOleT61zrGBpl3qYGy2StFpW_S3HCBszy-tKXQRS9sFXGdp19JnLY5j_twkVgEOIevWlWeAGvlFut4rjDOlEMipBmFe-tekEb_ctxPbaGrhvO8jN8H4nTefaGiv47d6TewbwKxwvnwx2ZiXVnPhBEYjL6JHQbNkPSACqGooyU9fkR5kKpL_ikjM-Oc"/>
+</div>
+</section>
+<!-- Section 3: Nuestros Servicios -->
+<section class="bg-surface py-section-padding px-gutter" id="servicios">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-xl text-headline-xl tracking-tighter uppercase leading-none">
+                        Nuestros <br/> <span class="text-primary/50">Servicios</span>
+</h2>
+<div class="flex justify-center gap-4 pt-6">
+<button class="bg-on-background text-background px-8 py-2 rounded-full font-bold text-label-lg hover:bg-primary transition-colors">Comenzar</button>
+<button class="bg-surface-container-high text-on-background px-8 py-2 rounded-full font-bold text-label-lg hover:bg-surface-bright transition-colors border border-outline-variant">Hablemos</button>
+</div>
+</div>
+<!-- Bento Grid for Services -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Campañas -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-6">Campañas</h3>
+<div class="w-full aspect-square mb-6 overflow-hidden rounded-lg bg-white/5">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="High-quality 3D digital illustration of a laptop showing dynamic marketing data charts and growth analytics, vibrant colors of magenta and kinetic blue, clean minimalist aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_SkLp5xTwatenHh8IxL39Nm84KLTUVbId25X7AI-OS0C66U2wMYa7Fo70sdt8milzuCf9s91avPXt6hq2SGFjCCLUv4qCfklN7mlwRaZ8ZTVmeXp2NIvMWHbvsrDc21eZK-Fc7MAVHaGyxfRCIS64R7Tc138FYJE1v4_LxhnCOwztX2DS35-X1-xvhT4i7JTvMxn9sj8HBJE4VQJ_FYsF-2ksyXEV3-tmq3oBdWe8zjMwvGueaSgsjWo0diqow6_auM02aJqXK4Y"/>
+</div>
+<p class="text-on-surface-variant">Estrategias que convierten clics en ventas</p>
+</div>
+<!-- Pauta -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-6">Pauta</h3>
+<div class="w-full aspect-square mb-6 overflow-hidden rounded-lg bg-white/5">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Abstract fluid design with geometric elements and social media symbols, floating in a clean white digital space, rich blues and purples contrasting with high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_SkLp5xTwatenHh8IxL39Nm84KLTUVbId25X7AI-OS0C66U2wMYa7Fo70sdt8milzuCf9s91avPXt6hq2SGFjCCLUv4qCfklN7mlwRaZ8ZTVmeXp2NIvMWHbvsrDc21eZK-Fc7MAVHaGyxfRCIS64R7Tc138FYJE1v4_LxhnCOwztX2DS35-X1-xvhT4i7JTvMxn9sj8HBJE4VQJ_FYsF-2ksyXEV3-tmq3oBdWe8zjMwvGueaSgsjWo0diqow6_auM02aJqXK4Y"/>
+</div>
+<p class="text-on-surface-variant">Anuncios en Meta que llevan tu marca más lejos</p>
+</div>
+<!-- Diseño Gráfico -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-6">Diseño Gráfico</h3>
+<div class="w-full aspect-square mb-6 overflow-hidden rounded-lg bg-white/5">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Artistic composition of colorful frames and organic shapes, layered digital collage style with professional layout principles, vibrant color palette and soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_SkLp5xTwatenHh8IxL39Nm84KLTUVbId25X7AI-OS0C66U2wMYa7Fo70sdt8milzuCf9s91avPXt6hq2SGFjCCLUv4qCfklN7mlwRaZ8ZTVmeXp2NIvMWHbvsrDc21eZK-Fc7MAVHaGyxfRCIS64R7Tc138FYJE1v4_LxhnCOwztX2DS35-X1-xvhT4i7JTvMxn9sj8HBJE4VQJ_FYsF-2ksyXEV3-tmq3oBdWe8zjMwvGueaSgsjWo0diqow6_auM02aJqXK4Y"/>
+</div>
+<p class="text-on-surface-variant">Diseño con concepto, campañas con impacto</p>
+</div>
+<!-- Producción Audiovisual -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-6">Producción audiovisual</h3>
+<div class="w-full aspect-square mb-6 overflow-hidden rounded-lg bg-white/5">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Stylized 3D render of a video player interface with flowing neon waves and organic shapes, deep purples and electric blues, modern tech aesthetic for digital content creation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKK_qzgDMGeoFbw0UVvcafuKBI6xdLVAli0XGsXPfjOHhnZJTdXa750PE4sxPBGl0O6LKS_lUo5gVSRCYUuSkVPdHtnS7Ujt0G7KhTq_Ss5eLg7jzfQSkPQ_7vzlJlo5bq9_rvSYwz5H5F2HnTuJJknw3lSF4d1DpCn7EZ3OJUodJqCj3pWoyj5zXdawbQzlM6xQ9hsznj13CqSP213MvBFQD25mJ4Ev8hKKUclnL78C1IiaPsXUFlswf4_xCU915QaqyVxhjCX7E"/>
+</div>
+<p class="text-on-surface-variant">Videos que atrae clientes y conecta con tus soluciones</p>
+</div>
+<!-- Branding -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-6">Branding</h3>
+<div class="w-full aspect-square mb-6 overflow-hidden rounded-lg bg-white/5">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Product photography of a sleek glass bottle on a minimalist podium with elegant studio lighting and soft colorful shadows, premium brand identity concept." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKK_qzgDMGeoFbw0UVvcafuKBI6xdLVAli0XGsXPfjOHhnZJTdXa750PE4sxPBGl0O6LKS_lUo5gVSRCYUuSkVPdHtnS7Ujt0G7KhTq_Ss5eLg7jzfQSkPQ_7vzlJlo5bq9_rvSYwz5H5F2HnTuJJknw3lSF4d1DpCn7EZ3OJUodJqCj3pWoyj5zXdawbQzlM6xQ9hsznj13CqSP213MvBFQD25mJ4Ev8hKKUclnL78C1IiaPsXUFlswf4_xCU915QaqyVxhjCX7E"/>
+</div>
+<p class="text-on-surface-variant">Renueva tu imagen cautivando a más clientes</p>
+</div>
+<!-- ChatBot -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-6">ChatBot</h3>
+<div class="w-full aspect-square mb-6 overflow-hidden rounded-lg bg-white/5">
+<img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" data-alt="Futuristic 3D robot avatar floating above a smartphone screen, purple and soft violet color scheme, implying AI interaction and automated customer service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKK_qzgDMGeoFbw0UVvcafuKBI6xdLVAli0XGsXPfjOHhnZJTdXa750PE4sxPBGl0O6LKS_lUo5gVSRCYUuSkVPdHtnS7Ujt0G7KhTq_Ss5eLg7jzfQSkPQ_7vzlJlo5bq9_rvSYwz5H5F2HnTuJJknw3lSF4d1DpCn7EZ3OJUodJqCj3pWoyj5zXdawbQzlM6xQ9hsznj13CqSP213MvBFQD25mJ4Ev8hKKUclnL78C1IiaPsXUFlswf4_xCU915QaqyVxhjCX7E"/>
+</div>
+<p class="text-on-surface-variant">Conexión con tus clientes con atención inmediata</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Logofolio -->
+<section class="bg-background py-section-padding px-gutter" id="logofolio">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-xl text-headline-xl uppercase mb-20 tracking-tighter">LOGOFOLIO</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16 items-center">
+<div class="flex justify-center p-4">
+<img alt="American Wolf Style Logo" class="max-h-32 w-auto grayscale brightness-150 hover:grayscale-0 hover:scale-110 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GEyefhGB05h6IRmLmLr9QmY3y0IAH_15t1-q9KmQ_ao0J7CP6qdhhUURi3opgwPFMyIBfZMix0kEA-zGeXJyDrUtNMwPL8al5E9H0oETK1N2n1_lEvol6BCcNNRn6A9j7jCxskVvkTF2JBKss6aIFDdrcC89gts7oxpLDO2WEX1v5aluXMsfFC2k-V0O6rUDEK9w2L4pimu3Ok3Go-G2TA84y9RCp13VpJsgPcuboJWsaTXSPhjr-tyxcQRCKrBjEMxG25VsIbI"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="MultiEncanto Logo" class="max-h-32 w-auto grayscale brightness-150 hover:grayscale-0 hover:scale-110 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GEyefhGB05h6IRmLmLr9QmY3y0IAH_15t1-q9KmQ_ao0J7CP6qdhhUURi3opgwPFMyIBfZMix0kEA-zGeXJyDrUtNMwPL8al5E9H0oETK1N2n1_lEvol6BCcNNRn6A9j7jCxskVvkTF2JBKss6aIFDdrcC89gts7oxpLDO2WEX1v5aluXMsfFC2k-V0O6rUDEK9w2L4pimu3Ok3Go-G2TA84y9RCp13VpJsgPcuboJWsaTXSPhjr-tyxcQRCKrBjEMxG25VsIbI"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Safer Logo" class="max-h-24 w-auto grayscale brightness-150 hover:grayscale-0 hover:scale-110 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GEyefhGB05h6IRmLmLr9QmY3y0IAH_15t1-q9KmQ_ao0J7CP6qdhhUURi3opgwPFMyIBfZMix0kEA-zGeXJyDrUtNMwPL8al5E9H0oETK1N2n1_lEvol6BCcNNRn6A9j7jCxskVvkTF2JBKss6aIFDdrcC89gts7oxpLDO2WEX1v5aluXMsfFC2k-V0O6rUDEK9w2L4pimu3Ok3Go-G2TA84y9RCp13VpJsgPcuboJWsaTXSPhjr-tyxcQRCKrBjEMxG25VsIbI"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Hemo Sthetic Logo" class="max-h-24 w-auto grayscale brightness-150 hover:grayscale-0 hover:scale-110 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GEyefhGB05h6IRmLmLr9QmY3y0IAH_15t1-q9KmQ_ao0J7CP6qdhhUURi3opgwPFMyIBfZMix0kEA-zGeXJyDrUtNMwPL8al5E9H0oETK1N2n1_lEvol6BCcNNRn6A9j7jCxskVvkTF2JBKss6aIFDdrcC89gts7oxpLDO2WEX1v5aluXMsfFC2k-V0O6rUDEK9w2L4pimu3Ok3Go-G2TA84y9RCp13VpJsgPcuboJWsaTXSPhjr-tyxcQRCKrBjEMxG25VsIbI"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Campo Futuro Logo" class="max-h-32 w-auto grayscale brightness-150 hover:grayscale-0 hover:scale-110 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GEyefhGB05h6IRmLmLr9QmY3y0IAH_15t1-q9KmQ_ao0J7CP6qdhhUURi3opgwPFMyIBfZMix0kEA-zGeXJyDrUtNMwPL8al5E9H0oETK1N2n1_lEvol6BCcNNRn6A9j7jCxskVvkTF2JBKss6aIFDdrcC89gts7oxpLDO2WEX1v5aluXMsfFC2k-V0O6rUDEK9w2L4pimu3Ok3Go-G2TA84y9RCp13VpJsgPcuboJWsaTXSPhjr-tyxcQRCKrBjEMxG25VsIbI"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Leon Viajero Logo" class="max-h-32 w-auto grayscale brightness-150 hover:grayscale-0 hover:scale-110 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GEyefhGB05h6IRmLmLr9QmY3y0IAH_15t1-q9KmQ_ao0J7CP6qdhhUURi3opgwPFMyIBfZMix0kEA-zGeXJyDrUtNMwPL8al5E9H0oETK1N2n1_lEvol6BCcNNRn6A9j7jCxskVvkTF2JBKss6aIFDdrcC89gts7oxpLDO2WEX1v5aluXMsfFC2k-V0O6rUDEK9w2L4pimu3Ok3Go-G2TA84y9RCp13VpJsgPcuboJWsaTXSPhjr-tyxcQRCKrBjEMxG25VsIbI"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest font-body-md text-body-md full-width py-section-padding border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="font-headline-sm text-headline-sm font-black text-on-background tracking-tighter uppercase">
+                Distinto
+            </div>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="text-center md:text-left">
+<span class="block text-label-lg uppercase mb-2 text-on-surface-variant opacity-60">Contacto</span>
+<a class="text-primary hover:text-white transition-colors" href="mailto:proyectos@distintoagencia.com">proyectos@distintoagencia.com</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold text-label-lg btn-glow focus:ring-2 ring-primary">
+                    ¡HABLEMOS!
+                </button>
+</div>
+<div class="text-on-surface-variant opacity-70 text-sm">
+                © 2024 Distinto. Todos los derechos reservados.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and effects
+        document.addEventListener('mousemove', (e) => {
+            const cursorGlow = document.createElement('div');
+            cursorGlow.className = 'fixed w-64 h-64 bg-primary/5 rounded-full pointer-events-none -z-1 blur-3xl';
+            cursorGlow.style.left = (e.clientX - 128) + 'px';
+            cursorGlow.style.top = (e.clientY - 128) + 'px';
+            
+            // Limit creation of glow elements for performance
+            if (Math.random() > 0.95) {
+                document.body.appendChild(cursorGlow);
+                setTimeout(() => cursorGlow.remove(), 1000);
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

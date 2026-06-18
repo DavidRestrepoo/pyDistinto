@@ -1,0 +1,51 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 1200"
+    width="1200"
+    height="1200">
+
+    <!-- Fondo -->
+    <rect width="1200" height="1200" fill="#000000"/>
+
+    <!-- Texto principal -->
+    <text
+        x="600"
+        y="620"
+        text-anchor="middle"
+        fill="#F2F2F2"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="140"
+        font-weight="900"
+        letter-spacing="-4">
+        DISTINTO
+    </text>
+
+    <!-- Gota azul -->
+    <path
+        fill="#5DB7F5"
+        d="
+            M615 650
+            C615 620 630 605 630 585
+            C630 575 630 565 628 555
+            C640 570 645 590 645 610
+            C645 635 632 650 615 650
+            C603 650 595 642 595 630
+            C595 618 602 610 612 605
+            C610 615 610 622 610 628
+            C610 638 612 645 615 650
+        "/>
+
+    <!-- Texto secundario -->
+    <text
+        x="600"
+        y="680"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="28"
+        font-weight="300"
+        letter-spacing="18">
+        AGENCIA CREATIVA
+    </text>
+
+</svg>

@@ -1,0 +1,520 @@
+<main class="landing">
+  <!-- Session 1: Main Horizontal Menu -->
+  <section class="session-1">
+    <nav class="flex items-center justify-between px-8 py-4 bg-background/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+      <!-- Columna 1: Logo -->
+      <a href="#inicio" aria-label="Distinto inicio" class="menu-brand text-2xl font-black tracking-tighter uppercase text-white flex items-center">
+        <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="menu-brand__logo" />
+      </a>
+
+      <!-- Columna 2: Enlaces -->
+      <ul class="flex items-center gap-8 list-none m-0 p-0">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      </ul>
+
+      <!-- Columna 3: Acción (CTA) -->
+      <button class="nav-cta font-bold py-2 px-6 rounded-md" (click)="onLearnMore()">
+        ¡HABLEMOS!
+      </button>
+    </nav>
+  </section>
+
+  <!-- Session 2: Hero -->
+  <section class="session-2">
+    <section class="hero-shell" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-content flex flex-col items-center">
+        <!-- Badge -->
+        <div style="background-color: rgba(30,32,53, 0.6); border: 1px solid rgba(62,66,101, 0.5); color: #b0b3d6;" class="inline-block rounded-full px-4 py-1 mb-6 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+          AGENCIA DE PERFORMANCE · CLÍNICAS ESTÉTICAS Y ODONTOLÓGICAS
+        </div>
+
+        <!-- Main Heading -->
+        <h1 id="hero-title" class="hero-title mb-6">
+          Construimos un sistema de<br/>
+          adquisición de <span style="color: #5DB7F5;">pacientes</span><br/>
+          <span style="color: #5DB7F5;">de alto valor</span> para que tu<br/>
+          negocio genere clientes<br/>
+          todos los meses.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+          En Distinto construimos sistemas de ventas completos y<br/>
+          personalizados que convierten tráfico en clientes.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex items-center gap-4">
+          <button class="s2-btn-primary" type="button">
+            Quiero mi sistema
+          </button>
+          <button class="s2-btn-secondary" type="button">
+            Ver casos de éxito
+          </button>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Session 3 -->
+  <section class="session-3" aria-label="Carrusel de marcas aliadas">
+    <!-- Client Logos Infinite Marquee -->
+    <div class="client-strip-wrapper" aria-label="Marcas aliadas">
+      <div class="client-strip-track">
+        @for (logo of partnerLogos(); track $index) {
+        <img [src]="logo" alt="Logo Cliente" class="client-logo-img" />
+        }
+        @for (logo of partnerLogos(); track 'dup-' + $index) {
+        <img [src]="logo" alt="" class="client-logo-img" aria-hidden="true" />
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Session 4: Quiénes Somos -->
+  <section class="session-4" id="nosotros" aria-labelledby="about-title">
+    <div class="about-intro">
+      <div class="about-badge">QUIÉNES SOMOS</div>
+      <h2 id="about-title" class="about-title">¡SOMOS DISTINTO!</h2>
+      <p class="about-copy">
+        Somos una agencia de performance <strong>especializada en clínicas estéticas y odontológicas.</strong>
+      </p>
+      <p class="about-copy">
+        No vendemos publicidad. Diseñamos <strong>sistemas de adquisición automatizados</strong> que llenan agendas con pacientes calificados, reducen el costo de captación y eliminan la dependencia de referidos.
+      </p>
+      <p class="about-copy">
+        En 90 días construimos la infraestructura digital que tu clínica necesita para crecer de forma predecible y escalable.
+      </p>
+    </div>
+  </section>
+
+  <!-- Session 5 -->
+  <section class="session-5" id="problemas">
+    <div class="s2-container">
+      <!-- Badge -->
+      <div class="s2-badge">¿TE SUENA FAMILIAR?</div>
+
+      <!-- Heading -->
+      <h2 class="s2-title">Tu pauta genera conversaciones,<br/>pero no llena tu agenda</h2>
+
+      <!-- Subtitle -->
+      <p class="s2-subtitle">Estos son los problemas reales que tienen las clínicas que llegan a nosotros.</p>
+    </div>
+
+    <!-- Pain Points Grid -->
+    <div class="pain-points">
+      <div class="pain-points-grid">
+        <!-- Card 1: Leads sin intención real -->
+        <article class="pain-card">
+          <div class="pain-card-icons">
+            <div class="pain-icon-box">
+              <img src="/Logos/logos_cuadros1.png" alt="" class="pain-card-custom-icon" />
+            </div>
+            <div class="pain-icon-box pain-icon-box--dimmed">
+              <img src="/Logos/logo_cuadro2.png" alt="" class="pain-card-custom-icon" />
+            </div>
+          </div>
+          <h3 class="pain-card-title">Leads sin intención real</h3>
+          <p class="pain-card-text">Recibes mensajes de curiosos que nunca agendan. Tu equipo pierde tiempo calificando prospectos que jamás van a comprar.</p>
+        </article>
+
+        <!-- Card 2: Agenda con ausencias y huecos -->
+        <article class="pain-card">
+          <div class="pain-card-icons">
+            <div class="pain-icon-box">
+              <img src="/Logos/logos_cuadros3.png" alt="" class="pain-card-custom-icon" />
+            </div>
+            <div class="pain-icon-box pain-icon-box--dimmed">
+              <img src="/Logos/logos_cuadros4.png" alt="" class="pain-card-custom-icon" />
+            </div>
+          </div>
+          <h3 class="pain-card-title">Agenda con ausencias y huecos</h3>
+          <p class="pain-card-text">Pacientes que agendan y no asisten. Sin seguimiento automatizado, cada ausencia es dinero que ya no vuelve.</p>
+        </article>
+
+        <!-- Card 3: Inversión en pauta sin retorno claro -->
+        <article class="pain-card">
+          <div class="pain-card-icons">
+            <div class="pain-icon-box">
+              <img src="/Logos/logos_cuadros5.png" alt="" class="pain-card-custom-icon" />
+            </div>
+            <div class="pain-icon-box pain-icon-box--dimmed">
+              <img src="/Logos/logos_cuadros6.png" alt="" class="pain-card-custom-icon" />
+            </div>
+          </div>
+          <h3 class="pain-card-title">Inversión en pauta sin retorno claro</h3>
+          <p class="pain-card-text">Gastas en Meta Ads pero no tienes claridad de qué campaña genera pacientes reales y cuánto te cuesta cada uno.</p>
+        </article>
+
+        <!-- Card 4: Dependencia total de referidos -->
+        <article class="pain-card">
+          <div class="pain-card-icons">
+            <div class="pain-icon-box">
+              <img src="/Logos/logos_cuadros7.png" alt="" class="pain-card-custom-icon" />
+            </div>
+            <div class="pain-icon-box pain-icon-box--dimmed">
+              <img src="/Logos/logos_cuadros8.png" alt="" class="pain-card-custom-icon" />
+            </div>
+          </div>
+          <h3 class="pain-card-title">Dependencia total de referidos</h3>
+          <p class="pain-card-text">Tu clínica crece o decrece según el boca a boca. Sin un sistema, no hay crecimiento predecible ni escalable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Session 6: La Solución -->
+  <section class="session-6" aria-labelledby="solution-title">
+    <div class="solution-shell">
+      <div class="solution-badge">LA SOLUCIÓN</div>
+      <h2 id="solution-title" class="solution-title">El sistema que convierte tráfico en pacientes calificados</h2>
+      <p class="solution-subtitle">Tres piezas integradas que trabajan juntas para llenar tu agenda de forma automática.</p>
+
+      <div class="solution-grid">
+        <article class="solution-card">
+          <div class="solution-step">PASO 01</div>
+          <div class="solution-icon-main" aria-hidden="true">
+            <img src="/Logos/logos_cuadros9.png" alt="" class="solution-icon-png" />
+          </div>
+          <div class="solution-icon-accent" aria-hidden="true">
+            <img src="/Logos/logos_cuadros10.png" alt="" class="solution-icon-png" />
+          </div>
+          <h3 class="solution-card-title">Oferta que vende sola</h3>
+          <p class="solution-card-text">Reestructuramos tu propuesta de valor para que responda a las objeciones reales del mercado y convierta desde el primer contacto.</p>
+        </article>
+
+        <article class="solution-card">
+          <div class="solution-step">PASO 02</div>
+          <div class="solution-icon-main" aria-hidden="true">
+            <img src="/Logos/logos_cuadros11.png" alt="" class="solution-icon-png" />
+          </div>
+          <div class="solution-icon-accent" aria-hidden="true">
+            <img src="/Logos/logos_cuadros12.png" alt="" class="solution-icon-png" />
+          </div>
+          <h3 class="solution-card-title">Sistema de adquisición en 3 capas</h3>
+          <p class="solution-card-text">Meta Ads precalificados que eliminan curiosos → Landing con formulario que filtra prospectos → Agente IA en WhatsApp que califica y agenda 24/7.</p>
+        </article>
+
+        <article class="solution-card">
+          <div class="solution-step">PASO 03</div>
+          <div class="solution-icon-main" aria-hidden="true">
+            <img src="/Logos/logos_cuadros13.png" alt="" class="solution-icon-png" />
+          </div>
+          <div class="solution-icon-accent" aria-hidden="true">
+            <img src="/Logos/logos_cuadros14.png" alt="" class="solution-icon-png" />
+          </div>
+          <h3 class="solution-card-title">Optimización continua con datos</h3>
+          <p class="solution-card-text">Reportes semanales, KPIs definidos desde el inicio y ajustes estratégicos para reducir el costo por paciente mes a mes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session 7: Nuestros Servicios -->
+  <section class="session-7" id="servicios" aria-labelledby="services-title">
+    <div class="s7-shell">
+      <h2 id="services-title" class="s7-title">NUESTROS SERVICIOS</h2>
+      <p class="s7-subtitle">Todo integrado en un solo sistema de adquisición. Sin piezas sueltas.</p>
+
+      <div class="s7-grid">
+        <article class="s7-card">
+          <div class="s7-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">campaign</span>
+          </div>
+          <h3 class="s7-card-title">Meta Ads precalificados</h3>
+          <p class="s7-card-text">Campañas diseñadas para atraer pacientes con intención real, no solo alcance o impresiones.</p>
+        </article>
+
+        <article class="s7-card">
+          <div class="s7-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">grid_view</span>
+          </div>
+          <h3 class="s7-card-title">Landing pages de conversión</h3>
+          <p class="s7-card-text">Páginas alineadas al anuncio con formularios que filtran y califican al prospecto antes del contacto.</p>
+        </article>
+
+        <article class="s7-card">
+          <div class="s7-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">smart_toy</span>
+          </div>
+          <h3 class="s7-card-title">Agente IA en WhatsApp</h3>
+          <p class="s7-card-text">Calificación y agendamiento automático 24/7 sin depender de tu equipo humano para cada respuesta.</p>
+        </article>
+
+        <article class="s7-card">
+          <div class="s7-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">draw</span>
+          </div>
+          <h3 class="s7-card-title">Creatividades y copies</h3>
+          <p class="s7-card-text">Anuncios, diseños y mensajes que conectan con el dolor real de tu paciente ideal y generan acción.</p>
+        </article>
+
+        <article class="s7-card">
+          <div class="s7-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">monitoring</span>
+          </div>
+          <h3 class="s7-card-title">Reportes y optimización</h3>
+          <p class="s7-card-text">Dashboard con KPIs reales: costo por lead, por agendamiento y por paciente. Sin métricas vanity.</p>
+        </article>
+
+        <article class="s7-card">
+          <div class="s7-icon" aria-hidden="true">
+            <span class="material-symbols-outlined">forum</span>
+          </div>
+          <h3 class="s7-card-title">Proceso de cierre comercial</h3>
+          <p class="s7-card-text">Estructura de venta probada con datos del sector para convertir consultas en tratamientos pagos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session 8: Lo Que Incluye -->
+  <section class="session-8" aria-labelledby="include-title">
+    <div class="s8-shell">
+      <div class="s8-badge">LO QUE INCLUYE</div>
+      <h2 id="include-title" class="s8-title">Sistema de Adquisición Automatizado</h2>
+      <p class="s8-subtitle">Sprint de 90 días. Implementación completa. Resultados medibles.</p>
+
+      <article class="s8-panel">
+        <div class="s8-panel-badge">🚀 SPRINT 90 DÍAS</div>
+        <h3 class="s8-panel-title">Todo lo que construimos para ti</h3>
+        <p class="s8-panel-subtitle">Un sistema completo, no un servicio suelto. Cada pieza conectada con la siguiente.</p>
+
+        <ul class="s8-list" aria-label="Incluye">
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Diagnóstico y reestructuración de oferta</strong> — para que venda más y convierta mejor</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Campaña Meta Ads precalificada</strong> — anuncios que eliminan curiosos desde el inicio</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Landing page con formulario calificado</strong> — orientación del prospecto antes del contacto</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Agente IA en WhatsApp</strong> — califica el lead y agenda automáticamente 24/7</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Creatividades y copies</strong> para anuncios, landing y WhatsApp</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Reportes semanales + KPIs definidos</strong> desde el primer día</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true">check</span><strong>Ajustes estratégicos continuos</strong> — validamos antes de escalar</li>
+        </ul>
+
+        <button class="s8-cta" type="button">Quiero implementar este sistema</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Session 9: Casos de Éxito -->
+  <section class="session-9" aria-labelledby="cases-title">
+    <div class="s9-shell">
+      <div class="s9-badge">RESULTADOS REALES</div>
+      <h2 id="cases-title" class="s9-title">Casos de éxito</h2>
+      <p class="s9-subtitle">Marcas que ya tienen un sistema. Estos son sus números.</p>
+
+      <div class="s9-grid">
+        <article class="s9-card">
+          <img src="/Logos/Logos-Clientes/logo-01.png" alt="Safer Agrobiológicos" class="s9-logo" />
+          <div class="s9-tag">AGROINDUSTRIAL</div>
+          <h3 class="s9-card-title">Safer Agrobiológicos</h3>
+          <p class="s9-card-subline">Desde 2021 · Crecimiento digital sostenido</p>
+          <p class="s9-card-text">Transformamos su branding, los posicionamos digitalmente y construimos campañas Meta B2B para aumentar ventas en el sector agrícola. De visibilidad cero a referente del sector.</p>
+          <div class="s9-metrics s9-metrics--three">
+            <div><strong>3x</strong><span>Ventas B2B</span></div>
+            <div><strong>-42%</strong><span>Costo/venta</span></div>
+            <div><strong>2.8M</strong><span>Alcance</span></div>
+          </div>
+        </article>
+
+        <article class="s9-card">
+          <img src="/Logos/Logos-Clientes/logo-07.png" alt="American Wolf" class="s9-logo" />
+          <div class="s9-tag">TEXTIL</div>
+          <h3 class="s9-card-title">American Wolf</h3>
+          <p class="s9-card-subline">Desde 2024 · Captación B2B de materia textil</p>
+          <p class="s9-card-text">Diseñamos su sistema de captación de compradores B2B en Meta Ads, generando un flujo constante de leads calificados para la venta de materia prima textil.</p>
+          <div class="s9-metrics s9-metrics--two">
+            <div><strong>+300</strong><span>Leads/mes</span></div>
+            <div><strong>+30%</strong><span>Ventas</span></div>
+          </div>
+        </article>
+
+        <article class="s9-card">
+          <img src="/Logos/Logos-Clientes/logo-03.png" alt="Bosanet" class="s9-logo s9-logo--wide" />
+          <div class="s9-tag">ALIMENTOS</div>
+          <h3 class="s9-card-title">Bosanet</h3>
+          <p class="s9-card-subline">Sistema de captación y agendamiento</p>
+          <p class="s9-card-text">Implementamos flujos completos de captación desde Meta Ads hasta agendamiento, optimizamos presupuesto y redujimos abandonos en el proceso de venta.</p>
+          <div class="s9-metrics s9-metrics--two">
+            <div><strong>40%</strong><span>Más MQL</span></div>
+            <div><strong>-30%</strong><span>Abandonos</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session 10: Form -->
+  <section class="session-10" id="contacto" aria-labelledby="contact-title">
+    <div class="s10-container">
+      <!-- Badge -->
+      <div class="s10-badge">¿LISTO PARA TENER UN SISTEMA?</div>
+
+      <!-- Heading -->
+      <h2 id="contact-title" class="s10-title">Cuéntanos tu proyecto</h2>
+
+      <!-- Subtitle -->
+      <p class="s10-subtitle">
+        Completa el formulario y en menos de 24 horas te contactamos con un plan de acción personalizado.
+      </p>
+
+      <!-- Form -->
+      <form class="s10-form">
+        <!-- Row 1: Nombre / Apellidos -->
+        <div class="s10-row">
+          <div class="s10-field">
+            <label class="s10-label" for="nombre">Nombre</label>
+            <input class="s10-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="s10-field">
+            <label class="s10-label" for="apellidos">Apellidos</label>
+            <input class="s10-input" type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required />
+          </div>
+        </div>
+
+        <!-- Row 2: Correo electrónico / WhatsApp -->
+        <div class="s10-row">
+          <div class="s10-field">
+            <label class="s10-label" for="email">Correo electrónico</label>
+            <input class="s10-input" type="email" id="email" name="email" placeholder="hola@tuclinica.com" required />
+          </div>
+          <div class="s10-field">
+            <label class="s10-label" for="whatsapp">WhatsApp</label>
+            <input class="s10-input" type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 000 0000" required />
+          </div>
+        </div>
+
+        <!-- Dropdown 1: ¿Estás en la industria de clínicas estéticas u odontológicas? -->
+        <div class="s10-field">
+          <label class="s10-label" for="industria">¿Estás en la industria de clínicas estéticas u odontológicas?</label>
+          <div class="s10-select-wrapper">
+            <select class="s10-select" id="industria" name="industria" required>
+              <option value="" disabled selected hidden>Selecciona una opción...</option>
+              <option value="si_estetica">Sí, clínica estética</option>
+              <option value="si_odontologica">Sí, clínica odontológica</option>
+              <option value="no_otra">No, otra industria</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: ¿Cuánto es tu presupuesto mensual para anuncios? -->
+        <div class="s10-field">
+          <label class="s10-label" for="presupuesto">¿Cuánto es tu presupuesto mensual para anuncios?</label>
+          <span class="s10-field-desc">Así podremos enviarte las mejores estrategias para tu presupuesto</span>
+          <div class="s10-select-wrapper">
+            <select class="s10-select" id="presupuesto" name="presupuesto" required>
+              <option value="" disabled selected hidden>Selecciona una opción...</option>
+              <option value="menos_500">Menos de $500 USD / mes</option>
+              <option value="500_1500">$500 - $1,500 USD / mes</option>
+              <option value="1500_3000">$1,500 - $3,000 USD / mes</option>
+              <option value="mas_3000">Más de $3,000 USD / mes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 3: ¿Cuánto es tu facturación mensual actual? -->
+        <div class="s10-field">
+          <label class="s10-label" for="facturacion">¿Cuánto es tu facturación mensual actual?</label>
+          <span class="s10-field-desc">Así podremos enviarte un plan de acción con un impacto real en la facturación de tu negocio</span>
+          <div class="s10-select-wrapper">
+            <select class="s10-select" id="facturacion" name="facturacion" required>
+              <option value="" disabled selected hidden>Selecciona una opción...</option>
+              <option value="menos_5k">Menos de $5,000 USD / mes</option>
+              <option value="5k_15k">$5,000 - $15,000 USD / mes</option>
+              <option value="15k_30k">$15,000 - $30,000 USD / mes</option>
+              <option value="mas_30k">Más de $30,000 USD / mes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 4: ¿Qué tan pronto te gustaría comenzar? -->
+        <div class="s10-field">
+          <label class="s10-label" for="comienzo">¿Qué tan pronto te gustaría comenzar?</label>
+          <div class="s10-select-wrapper">
+            <select class="s10-select" id="comienzo" name="comienzo" required>
+              <option value="" disabled selected hidden>Selecciona una opción...</option>
+              <option value="inmediatamente">Inmediatamente (esta semana)</option>
+              <option value="1_2_semanas">En 1 o 2 semanas</option>
+              <option value="este_mes">Este mes</option>
+              <option value="solo_curioseando">Solo estoy explorando</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="s10-submit" type="submit">
+          Quiero mi sistema de adquisición
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Session 11: Portfolio + Footer -->
+  <section class="session-11">
+    <section class="portfolio" id="logofolio" aria-labelledby="portfolio-title">
+      <h2 id="portfolio-title" class="font-headline-xl text-headline-xl uppercase mb-20">LOGOFOLIO</h2>
+      <p class="portfolio-subtitle">Marcas que confían en Distinto para crecer.</p>
+      <div class="portfolio-grid">
+        @for (logo of partnerLogos(); track logo) {
+        <div class="portfolio-logo-cell">
+          <img [src]="logo" alt="Logo cliente" class="portfolio-logo-img" />
+        </div>
+        }
+      </div>
+    </section>
+  </section>
+
+  <!-- Session 12: Premium Footer -->
+  <section class="session-12">
+    <div class="s12-container">
+      <!-- Top Row -->
+      <div class="s12-top-row">
+        <!-- Logo Block -->
+        <a href="#inicio" aria-label="Distinto inicio" class="menu-brand">
+          <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="menu-brand__logo" />
+        </a>
+
+        <!-- Social Icons Block -->
+        <div class="s12-social-block">
+          <span class="s12-siguenos">Síguenos</span>
+          <div class="s12-social-icons">
+            <a href="https://instagram.com" class="s12-icon-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="s12-icon-link" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://tiktok.com" class="s12-icon-link" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <button class="nav-cta font-bold py-2 px-6 rounded-md" type="button" (click)="onLearnMore()">¡HABLEMOS!</button>
+      </div>
+
+      <!-- Divider -->
+      <hr class="s12-divider" />
+
+      <!-- Bottom Row -->
+      <div class="s12-bottom-row">
+        <p class="s12-copy">© 2026 Distinto Agencia Creativa · Medellín, Colombia</p>
+        <div class="s12-links">
+          <a href="#" class="s12-link">Términos y condiciones</a>
+          <a href="#" class="s12-link">Política de privacidad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
