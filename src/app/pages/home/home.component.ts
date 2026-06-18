@@ -28,6 +28,17 @@ export class HomeComponent {
   // Computed example – active partner logos (could be filtered later)
   readonly activePartnerLogos = computed(() => this.partnerLogos().filter(l => !!l));
 
+  // Mobile menu open state
+  readonly isMobileMenuOpen = signal(false);
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen.update(open => !open);
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen.set(false);
+  }
+
   // Simple effect just for demonstration (can be removed in prod)
   constructor() {
     effect(() => console.log('HomeComponent loaded – services count:', this.services().length));
@@ -35,6 +46,7 @@ export class HomeComponent {
 
   // Scroll to services section – similar to previous onLearnMore
   onLearnMore(): void {
+    this.closeMobileMenu();
     const el = document.getElementById('servicios');
     el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

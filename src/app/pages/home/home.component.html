@@ -3,21 +3,30 @@
   <section class="session-1">
     <nav class="flex items-center justify-between px-8 py-4 bg-background/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
       <!-- Columna 1: Logo -->
-      <a href="#inicio" aria-label="Distinto inicio" class="menu-brand text-2xl font-black tracking-tighter uppercase text-white flex items-center">
+      <a href="#inicio" (click)="closeMobileMenu()" aria-label="Distinto inicio" class="menu-brand text-2xl font-black tracking-tighter uppercase text-white flex items-center">
         <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="menu-brand__logo" />
       </a>
 
-      <!-- Columna 2: Enlaces -->
-      <ul class="flex items-center gap-8 list-none m-0 p-0">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-      </ul>
-
-      <!-- Columna 3: Acción (CTA) -->
-      <button class="nav-cta font-bold py-2 px-6 rounded-md" (click)="onLearnMore()">
-        ¡HABLEMOS!
+      <!-- Hamburguesa para móvil -->
+      <button class="menu-toggle" [class.open]="isMobileMenuOpen()" (click)="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
+
+      <!-- Columna 2 y 3: Enlaces y CTA (agrupados para menú móvil) -->
+      <div class="nav-menu" [class.active]="isMobileMenuOpen()">
+        <ul class="flex items-center gap-8 list-none m-0 p-0">
+          <li><a href="#inicio" (click)="closeMobileMenu()" class="nav-link">Inicio</a></li>
+          <li><a href="#nosotros" (click)="closeMobileMenu()" class="nav-link">Nosotros</a></li>
+          <li><a href="#servicios" (click)="closeMobileMenu()" class="nav-link">Servicios</a></li>
+        </ul>
+
+        <!-- Columna 3: Acción (CTA) -->
+        <button class="nav-cta font-bold py-2 px-6 rounded-md" (click)="onLearnMore()">
+          ¡HABLEMOS!
+        </button>
+      </div>
     </nav>
   </section>
 

@@ -1727,4 +1727,367 @@
   }
 }
 
+/* ==========================================================================
+   NUEVAS REGLAS PARA MENÚ DE NAVEGACIÓN Y RESPONSIVIDAD (SESIONES 1 A 12)
+   ========================================================================== */
+
+/* Estilos Base para la Barra de Navegación */
+.session-1 {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  overflow: visible !important; /* Permitir que la hamburguesa sea visible */
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+  
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 999px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &.open {
+    .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .bar:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================
+   MEDIA QUERIES PARA TODOS LOS DISPOSITIVOS
+   ========================================== */
+
+/* --- Ajustes para Tabletas y Pantallas Medianas (max-width: 992px) --- */
+@media (max-width: 992px) {
+  /* Sesión 2 (Hero) */
+  .hero-title {
+    font-size: clamp(2.2rem, 6vw, 3.2rem) !important;
+    padding: 0 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px !important;
+    padding: 0 1.5rem;
+  }
+
+  /* Sesión 9 (Casos de Éxito) - Grid en 2 columnas */
+  .s9-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* --- Ajustes para Móviles y Tabletas (max-width: 768px) --- */
+@media (max-width: 768px) {
+  /* Sesión 1: Menú de Navegación */
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .nav-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: rgba(11, 14, 20, 0.98) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3.5rem !important;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 90 !important;
+    padding: 2rem !important;
+
+    &.active {
+      right: 0 !important;
+    }
+
+    ul {
+      flex-direction: column !important;
+      gap: 2.5rem !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+
+    .nav-link {
+      font-size: 1.5rem !important;
+      display: block !important;
+      padding: 0.5rem 0 !important;
+    }
+
+    .nav-cta {
+      width: 80% !important;
+      max-width: 280px !important;
+      padding: 0.9rem 1.5rem !important;
+      font-size: 1.1rem !important;
+      text-align: center !important;
+    }
+  }
+
+  /* Sesión 2: Hero */
+  .hero-shell {
+    min-height: auto !important;
+    padding: 4rem 1rem 5rem !important;
+  }
+
+  .hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+    br {
+      display: none !important;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem !important;
+    margin: 1.5rem auto 2.5rem !important;
+    line-height: 1.5 !important;
+    br {
+      display: none !important;
+    }
+  }
+
+  /* Sesión 3: Carrusel Marcas */
+  .client-logo-img {
+    height: 54px !important;
+    max-width: 130px !important;
+  }
+  .client-strip-track {
+    gap: 3.5rem !important;
+  }
+
+  /* Sesión 4: Nosotros */
+  .session-4 {
+    padding: 3.5rem 1rem !important;
+  }
+  .about-copy {
+    font-size: 1.1rem !important;
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Sesión 5: Problemas (Pain Points) */
+  .session-5 {
+    padding: 3.5rem 1rem !important;
+
+    .s2-title {
+      font-size: 1.85rem !important;
+      line-height: 1.25 !important;
+      br {
+        display: none !important;
+      }
+    }
+  }
+
+  .pain-points {
+    margin-top: 2rem !important;
+    padding: 0 !important;
+  }
+
+  .pain-points-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .pain-card {
+    min-height: auto !important;
+    padding: 1.75rem 1.5rem !important;
+  }
+
+  /* Sesión 6: Solución */
+  .session-6 {
+    padding: 3.5rem 1rem !important;
+  }
+  
+  .solution-title {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .solution-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .solution-card {
+    min-height: auto !important;
+    padding: 1.5rem !important;
+  }
+
+  /* Sesión 7: Servicios */
+  .session-7 {
+    padding: 3.5rem 1rem !important;
+  }
+
+  .s7-title {
+    font-size: 1.85rem !important;
+  }
+
+  .s7-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .s7-card {
+    min-height: auto !important;
+    padding: 1.5rem !important;
+  }
+
+  .s7-card-title {
+    font-size: 1.35rem !important;
+  }
+
+  /* Sesión 8: Lo Que Incluye */
+  .session-8 {
+    padding: 3.5rem 1rem !important;
+  }
+
+  .s8-title {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .s8-panel {
+    padding: 1.75rem 1.5rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .s8-list {
+    gap: 0.8rem !important;
+    
+    li {
+      font-size: 0.92rem !important;
+      line-height: 1.45 !important;
+      
+      .material-symbols-outlined {
+        font-size: 18px !important;
+      }
+    }
+  }
+
+  /* Sesión 9: Casos de Éxito - Grid en 1 columna en móvil */
+  .s9-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .s9-card {
+    min-height: auto !important;
+    padding: 1.5rem !important;
+  }
+
+  .s9-card-title {
+    font-size: 1.6rem !important;
+  }
+
+  /* Sesión 11: Logofolio */
+  .portfolio {
+    padding: 3.5rem 1rem !important;
+  }
+
+  .portfolio h2 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .portfolio-subtitle {
+    font-size: 1.1rem !important;
+    margin: 0.5rem auto 2rem !important;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .portfolio-logo-cell {
+    min-height: 90px !important;
+  }
+
+  .portfolio-logo-img {
+    width: 120px !important;
+    height: 80px !important;
+  }
+}
+
+/* --- Ajustes para Móviles Extra Pequeños (max-width: 480px) --- */
+@media (max-width: 480px) {
+  /* Sesión 2: Stacking buttons */
+  .hero-content {
+    .flex.items-center.gap-4 {
+      flex-direction: column !important;
+      width: 100% !important;
+      gap: 1rem !important;
+      
+      button {
+        width: 100% !important;
+        padding: 0.9rem 1.5rem !important;
+        font-size: 0.95rem !important;
+      }
+    }
+  }
+
+  /* Sesión 9: Casos de éxito métricas */
+  .s9-metrics {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    
+    div {
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 0.5rem;
+      
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  /* Sesión 12: Footer links */
+  .s12-links {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
+  }
+}
+
 
