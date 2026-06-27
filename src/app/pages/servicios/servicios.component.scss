@@ -786,46 +786,13 @@ em {
 
 // Mobile
 @media (max-width: 768px) {
-  .srv-menu-toggle {
-    display: flex;
-  }
-
-  .srv-nav-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(11, 14, 20, 0.97);
-    backdrop-filter: blur(16px);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 105;
-
-    &.active {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  .srv-nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .srv-nav-link {
-    font-size: 1.2rem;
+  .srv-brand__logo {
+    height: 22px !important;
   }
 
   .srv-nav-cta {
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1.2rem !important;
   }
 
   .srv-hero {

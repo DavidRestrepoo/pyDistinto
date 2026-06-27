@@ -9,20 +9,7 @@
         <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="srv-brand__logo" />
       </a>
 
-      <button class="srv-menu-toggle" [class.open]="isMobileMenuOpen()" (click)="toggleMobileMenu()" aria-label="Toggle navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <div class="srv-nav-menu" [class.active]="isMobileMenuOpen()">
-        <ul class="srv-nav-links">
-          <li><a href="/home#inicio" (click)="closeMobileMenu()" class="srv-nav-link">Inicio</a></li>
-          <li><a href="/home#nosotros" (click)="closeMobileMenu()" class="srv-nav-link">Nosotros</a></li>
-          <li><a href="/servicios" (click)="closeMobileMenu()" class="srv-nav-link active">Servicios</a></li>
-        </ul>
-        <a href="/home#contacto" (click)="closeMobileMenu()" class="srv-nav-cta">¡HABLEMOS!</a>
-      </div>
+      <a href="/home#contacto" class="srv-nav-cta">¡HABLEMOS!</a>
     </nav>
   </section>
 
