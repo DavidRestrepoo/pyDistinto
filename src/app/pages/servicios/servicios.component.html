@@ -1,0 +1,292 @@
+<main class="srv-landing" id="srv-inicio">
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S1 — NAV BAR (sticky)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-nav">
+    <nav class="srv-navbar">
+      <a href="/home#inicio" class="srv-brand" aria-label="Distinto inicio">
+        <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="srv-brand__logo" />
+      </a>
+
+      <button class="srv-menu-toggle" [class.open]="isMobileMenuOpen()" (click)="toggleMobileMenu()" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="srv-nav-menu" [class.active]="isMobileMenuOpen()">
+        <ul class="srv-nav-links">
+          <li><a href="/home#inicio" (click)="closeMobileMenu()" class="srv-nav-link">Inicio</a></li>
+          <li><a href="/home#nosotros" (click)="closeMobileMenu()" class="srv-nav-link">Nosotros</a></li>
+          <li><a href="/servicios" (click)="closeMobileMenu()" class="srv-nav-link active">Servicios</a></li>
+        </ul>
+        <a href="/home#contacto" (click)="closeMobileMenu()" class="srv-nav-cta">¡HABLEMOS!</a>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S2 — HERO
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-hero">
+    <div class="srv-hero__grid"></div>
+    <div class="srv-hero__glow"></div>
+    <div class="srv-hero__content">
+      <span class="srv-hero__badge">SISTEMA DE ADQUISICIÓN DE PACIENTES</span>
+      <h1 class="srv-hero__title">
+        Tu clínica merece una agenda llena, <em>no leads que nunca convierten</em>
+      </h1>
+      <p class="srv-hero__subtitle">
+        Creamos un sistema integral de adquisición de pacientes que combina pauta digital, automatización y seguimiento inteligente para que tu clínica deje de depender de referidos y empiece a llenar su agenda de forma predecible.
+      </p>
+      <a href="/home#contacto" class="srv-hero__cta">Quiero llenar mi agenda →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S3 — LO QUE NADIE TE DICE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-nadie">
+    <div class="srv-nadie__content">
+      <span class="srv-nadie__badge">EL PROBLEMA</span>
+      <h2 class="srv-nadie__title">
+        Lo que ninguna agencia<br>te dice sobre la pauta en clínicas
+      </h2>
+      <p class="srv-nadie__text">
+        La mayoría de agencias te prometen «más leads» sin entender que un lead en el sector salud no es igual que en un e-commerce. Un paciente necesita confianza, seguimiento y un proceso de decisión más largo. Por eso, invertir en pauta sin un sistema detrás es tirar dinero.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S4 — PAIN POINTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-pain">
+    <div class="srv-pain__header">
+      <h2 class="srv-pain__title">
+        Tu pauta genera más gastos.<br>Tu agenda sigue <em>con huecos.</em>
+      </h2>
+    </div>
+    <div class="srv-pain__cards">
+      <div class="srv-pain__card">
+        <div class="srv-pain__icon">
+          <span class="material-symbols-outlined">money_off</span>
+        </div>
+        <h3 class="srv-pain__card-title">Gastas sin retorno</h3>
+        <p class="srv-pain__card-text">
+          Inviertes en Meta Ads o Google Ads, pero los leads que llegan nunca agendan. Tu costo por paciente real sigue subiendo mes a mes.
+        </p>
+      </div>
+      <div class="srv-pain__card">
+        <div class="srv-pain__icon">
+          <span class="material-symbols-outlined">person_off</span>
+        </div>
+        <h3 class="srv-pain__card-title">Leads fantasma</h3>
+        <p class="srv-pain__card-text">
+          Recibes formularios de contacto pero nadie contesta cuando llamas. Los leads se enfrían porque no hay un sistema de seguimiento inmediato.
+        </p>
+      </div>
+      <div class="srv-pain__card">
+        <div class="srv-pain__icon">
+          <span class="material-symbols-outlined">trending_down</span>
+        </div>
+        <h3 class="srv-pain__card-title">Agenda impredecible</h3>
+        <p class="srv-pain__card-text">
+          Algunos meses tienes pacientes y otros no. Dependes de referidos y no tienes control sobre cuántos pacientes nuevos llegan cada semana.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S5 — SISTEMA EN 3 CAPAS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-capas">
+    <div class="srv-capas__header">
+      <span class="srv-capas__badge">NUESTRA METODOLOGÍA</span>
+      <h2 class="srv-capas__title">
+        Un sistema en 3 capas que convierte tráfico en <em>pacientes certificados.</em>
+      </h2>
+    </div>
+    <div class="srv-capas__steps">
+      <!-- Step 1 -->
+      <div class="srv-capas__step">
+        <div class="srv-capas__number">1</div>
+        <div class="srv-capas__step-content">
+          <h3 class="srv-capas__step-title">Atracción Inteligente</h3>
+          <p class="srv-capas__step-text">
+            Creamos campañas de pauta segmentadas específicamente para el sector clínico. No usamos plantillas genéricas: cada anuncio está diseñado para atraer pacientes reales con intención de agendar.
+          </p>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="srv-capas__step">
+        <div class="srv-capas__number">2</div>
+        <div class="srv-capas__step-content">
+          <h3 class="srv-capas__step-title">Automatización y Seguimiento</h3>
+          <p class="srv-capas__step-text">
+            Cada lead que entra recibe seguimiento automático por WhatsApp, correo electrónico y SMS. No se pierde ni un solo contacto. El sistema responde en segundos, no en horas.
+          </p>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="srv-capas__step">
+        <div class="srv-capas__number">3</div>
+        <div class="srv-capas__step-content">
+          <h3 class="srv-capas__step-title">Conversión y Agendamiento</h3>
+          <p class="srv-capas__step-text">
+            Los leads calificados son llevados directamente a tu agenda. Con embudos optimizados y landing pages de alto rendimiento, convertimos tráfico frío en pacientes que pagan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S6 — SISTEMA DE ADQUISICIÓN AUTOMATIZADO
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-auto">
+    <div class="srv-auto__content">
+      <span class="srv-auto__badge">TECNOLOGÍA</span>
+      <h2 class="srv-auto__title">
+        Sistema de Adquisición <em>Automatizado</em>
+      </h2>
+      <p class="srv-auto__text">
+        Nuestro sistema integra todas las herramientas que necesitas para captar, nutrir y convertir pacientes de forma automática. Desde el primer clic hasta la cita agendada, todo está conectado.
+      </p>
+      <div class="srv-auto__visual">
+        <div class="srv-auto__flow">
+          <div class="srv-auto__flow-item">
+            <span class="material-symbols-outlined">ads_click</span>
+            <span>Anuncios</span>
+          </div>
+          <div class="srv-auto__flow-arrow">→</div>
+          <div class="srv-auto__flow-item">
+            <span class="material-symbols-outlined">web</span>
+            <span>Landing Page</span>
+          </div>
+          <div class="srv-auto__flow-arrow">→</div>
+          <div class="srv-auto__flow-item">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <span>Automatización</span>
+          </div>
+          <div class="srv-auto__flow-arrow">→</div>
+          <div class="srv-auto__flow-item">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span>Agenda</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S7 — TODO LO QUE CONSTRUIMOS PARA TI
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-incluido">
+    <div class="srv-incluido__header">
+      <span class="srv-incluido__badge">INCLUIDO</span>
+      <h2 class="srv-incluido__title">
+        Todo lo que construimos <em>para ti</em>
+      </h2>
+    </div>
+    <div class="srv-incluido__grid">
+      <div class="srv-incluido__item">
+        <span class="material-symbols-outlined">campaign</span>
+        <h3>Campañas de Pauta</h3>
+        <p>Meta Ads y Google Ads gestionados con estrategia clínica especializada.</p>
+      </div>
+      <div class="srv-incluido__item">
+        <span class="material-symbols-outlined">web</span>
+        <h3>Landing Pages</h3>
+        <p>Páginas de aterrizaje de alto rendimiento optimizadas para conversión.</p>
+      </div>
+      <div class="srv-incluido__item">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <h3>Chatbot con IA</h3>
+        <p>Respuesta inmediata a tus leads 24/7 con inteligencia artificial.</p>
+      </div>
+      <div class="srv-incluido__item">
+        <span class="material-symbols-outlined">monitoring</span>
+        <h3>Dashboard de Métricas</h3>
+        <p>Panel de control en tiempo real con tus KPIs más importantes.</p>
+      </div>
+      <div class="srv-incluido__item">
+        <span class="material-symbols-outlined">mail</span>
+        <h3>Email Marketing</h3>
+        <p>Secuencias automatizadas para nutrir y convertir leads fríos.</p>
+      </div>
+      <div class="srv-incluido__item">
+        <span class="material-symbols-outlined">support_agent</span>
+        <h3>Soporte Dedicado</h3>
+        <p>Equipo asignado a tu cuenta con reuniones semanales de seguimiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S8 — MÉTRICAS / RESULTADOS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-metricas">
+    <div class="srv-metricas__header">
+      <span class="srv-metricas__badge">RESULTADOS REALES</span>
+      <h2 class="srv-metricas__title">
+        Números que <em>hablan solos</em>
+      </h2>
+      <p class="srv-metricas__subtitle">Resultados promedio de nuestros clientes en los primeros 90 días.</p>
+    </div>
+    <div class="srv-metricas__cards">
+      <div class="srv-metricas__card">
+        <span class="srv-metricas__value">+300%</span>
+        <span class="srv-metricas__label">Aumento en citas agendadas</span>
+      </div>
+      <div class="srv-metricas__card">
+        <span class="srv-metricas__value">-60%</span>
+        <span class="srv-metricas__label">Reducción en costo por paciente</span>
+      </div>
+      <div class="srv-metricas__card">
+        <span class="srv-metricas__value">4.9★</span>
+        <span class="srv-metricas__label">Promedio en Google Reseñas</span>
+      </div>
+      <div class="srv-metricas__card">
+        <span class="srv-metricas__value">85%</span>
+        <span class="srv-metricas__label">Tasa de asistencia a citas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S9 — CASO DE ÉXITO / LOGO
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-caso">
+    <div class="srv-caso__content">
+      <span class="srv-caso__badge">CASO DE ÉXITO</span>
+      <div class="srv-caso__logo-wrap">
+        <span class="srv-caso__logo-icon">
+          <span class="material-symbols-outlined">verified</span>
+        </span>
+        <span class="srv-caso__logo-text">SAFER</span>
+      </div>
+      <p class="srv-caso__description">
+        Clínica Safer pasó de 15 a 80 citas mensuales en solo 60 días con nuestro sistema de adquisición automatizado. Hoy su agenda está llena 3 semanas por adelantado.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S10 — CTA FINAL
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-cta">
+    <div class="srv-cta__content">
+      <h2 class="srv-cta__title">
+        ¿Tu clínica está lista para<br><em>llenar su agenda?</em>
+      </h2>
+      <p class="srv-cta__text">
+        Agenda una sesión de diagnóstico gratuita y descubre cómo nuestro sistema puede transformar tu clínica.
+      </p>
+      <a href="/home#contacto" class="srv-cta__btn">Quiero mi diagnóstico gratis →</a>
+    </div>
+  </section>
+
+</main>
