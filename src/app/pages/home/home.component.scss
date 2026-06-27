@@ -141,6 +141,16 @@
   max-width: 220px;
   object-fit: contain;
   pointer-events: none;
+  transition: transform 0.2s ease;
+
+  &[src*="logo-01.png"] { transform: scale(1.35); }
+  &[src*="logo-02.png"] { transform: scale(1.45); }
+  &[src*="logo-03.png"] { transform: scale(1.35); }
+  &[src*="logo-04.png"] { transform: scale(1); }
+  &[src*="logo-05.png"] { transform: scale(0.7); }
+  &[src*="logo-07.png"] { transform: scale(0.7); }
+  &[src*="logo-08.png"] { transform: scale(1.4); }
+  &[src*="logo-09.png"] { transform: scale(1.4); }
 }
 
 @keyframes scroll-marquee {
