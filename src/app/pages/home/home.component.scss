@@ -321,6 +321,10 @@
   height: 44px;
   object-fit: contain;
 }
+.pain-card:first-of-type .pain-icon-box:first-of-type .pain-card-custom-icon {
+  width: 52px;
+  height: 52px;
+}
 .pain-card-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
