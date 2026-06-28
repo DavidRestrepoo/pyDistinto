@@ -1,0 +1,260 @@
+@use '../../styles/design-tokens' as *;
+
+:host {
+  display: block;
+  background: #0b0e14;
+  color: #c0c4db;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// Reuse header/footer styles
+.srv-landing {
+  background: #0b0e14;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.srv-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 14, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 2rem;
+}
+
+.srv-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.srv-brand__logo {
+  height: 40px;
+  width: auto;
+}
+
+.srv-nav-cta {
+  background: #5db7f5;
+  color: #0b0e14;
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: transform 0.2s, background-color 0.2s;
+
+  &:hover {
+    transform: translateY(-1px);
+    background-color: #79c8ff;
+  }
+}
+
+// Legal Page Styles
+.legal-section {
+  padding: 5rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.legal-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.legal-pretitle {
+  display: inline-block;
+  color: #5db7f5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.legal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900; // Montserrat Black
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #fff;
+  margin: 0 0 0.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.legal-update {
+  display: block;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+.legal-card {
+  background: rgba(18, 22, 37, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 3px solid rgba(93, 183, 245, 0.4); // Subtle glow on top
+  border-radius: 16px;
+  padding: 4rem 3.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.legal-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #fff;
+  font-weight: 400; // Montserrat Regular
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.legal-block {
+  margin-bottom: 2.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: #a0a5c4;
+    font-weight: 400; // Montserrat Regular
+    margin: 0 0 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.legal-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; // soft-bold Montserrat
+  font-size: 1.25rem;
+  color: #5db7f5;
+  margin: 0 0 1rem;
+}
+
+.legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  li {
+    font-size: 0.98rem;
+    color: #a0a5c4;
+    line-height: 1.6;
+
+    strong {
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+.legal-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(93, 183, 245, 0.2);
+
+  span {
+    font-size: 0.9rem;
+    color: #8a8eab;
+  }
+}
+
+// Footer Styles
+.srv-footer {
+  padding: 4rem 2rem;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.srv-footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.srv-footer__logo-wrap {
+  margin-bottom: 0.25rem;
+}
+
+.srv-footer__logo {
+  height: 32px;
+  width: auto;
+  opacity: 0.9;
+}
+
+.srv-footer__copy {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.srv-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.srv-footer__link {
+  font-size: 0.88rem;
+  color: #5db7f5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #79c8ff;
+    text-decoration: underline;
+  }
+}
+
+.srv-footer__sep {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .srv-nav {
+    padding: 1rem 1.25rem;
+  }
+
+  .legal-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .legal-card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .legal-title {
+    font-size: 2.2rem;
+  }
+
+  .legal-intro {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+}

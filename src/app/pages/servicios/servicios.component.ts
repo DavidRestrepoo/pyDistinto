@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { HomeService } from '../home/services/home.service';
 
 const INDUSTRY_MAP: Record<string, string> = {
@@ -36,7 +37,7 @@ const TIMELINE_MAP: Record<string, string> = {
 @Component({
   selector: 'app-servicios',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -629,9 +629,13 @@
       </div>
       <p class="srv-footer__copy">© 2025 Distinto Agencia Creativa · Colombia & EE.UU.</p>
       <div class="srv-footer__links">
-        <a href="/home" class="srv-footer__link">Sitio web</a>
+        <a routerLink="/home" class="srv-footer__link">Sitio web</a>
         <span class="srv-footer__sep">·</span>
         <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-footer__link">Contáctanos</a>
+        <span class="srv-footer__sep">·</span>
+        <a routerLink="/terminos" class="srv-footer__link">Términos y condiciones</a>
+        <span class="srv-footer__sep">·</span>
+        <a routerLink="/privacidad" class="srv-footer__link">Política de privacidad</a>
       </div>
     </div>
   </footer>

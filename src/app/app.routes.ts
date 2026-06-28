@@ -12,4 +12,12 @@ export const routes: Routes = [
     path: 'servicios',
     loadComponent: () => import('./pages/servicios/servicios.component').then(m => m.ServiciosComponent)
   },
+  {
+    path: 'terminos',
+    loadComponent: () => import('./pages/terminos/terminos.component').then(m => m.TerminosComponent)
+  },
+  {
+    path: 'privacidad',
+    loadComponent: () => import('./pages/privacidad/privacidad.component').then(m => m.PrivacidadComponent)
+  },
 ];
