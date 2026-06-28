@@ -5,11 +5,11 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="srv-nav">
     <nav class="srv-navbar">
-      <a href="/home#inicio" class="srv-brand" aria-label="Distinto inicio">
+      <a (click)="scrollTo('srv-inicio'); $event.preventDefault();" href="#srv-inicio" class="srv-brand" aria-label="Distinto inicio">
         <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="srv-brand__logo" />
       </a>
 
-      <a href="/home#contacto" class="srv-nav-cta">¡HABLEMOS!</a>
+      <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-nav-cta">¡HABLEMOS!</a>
     </nav>
   </section>
 
@@ -20,14 +20,41 @@
     <div class="srv-hero__grid"></div>
     <div class="srv-hero__glow"></div>
     <div class="srv-hero__content">
-      <span class="srv-hero__badge">SISTEMA DE ADQUISICIÓN DE PACIENTES</span>
+      <span class="srv-hero__badge"><span class="badge-dot"></span>SISTEMA DE ADQUISICIÓN · SPRINT 90 DÍAS</span>
       <h1 class="srv-hero__title">
-        Tu clínica merece una agenda llena, <em>no leads que nunca convierten</em>
+        Tu clínica merece una <span class="highlight">agenda llena</span>, no leads que nunca convierten
       </h1>
       <p class="srv-hero__subtitle">
-        Creamos un sistema integral de adquisición de pacientes que combina pauta digital, automatización y seguimiento inteligente para que tu clínica deje de depender de referidos y empiece a llenar su agenda de forma predecible.
+        Construimos el sistema completo que atrae pacientes calificados, los filtra automáticamente y llena tu agenda — sin depender de referidos ni de tu equipo para cada respuesta.
       </p>
-      <a href="/home#contacto" class="srv-hero__cta">Quiero llenar mi agenda</a>
+      
+      <div class="srv-hero__features">
+        <span class="srv-hero__feature"><span class="check-icon">✓</span> Sin dependencia de referidos</span>
+        <span class="srv-hero__feature"><span class="check-icon">✓</span> Resultados medibles desde el día 1</span>
+        <span class="srv-hero__feature"><span class="check-icon">✓</span> Agente IA 24/7 en WhatsApp</span>
+      </div>
+
+      <div class="srv-hero__actions">
+        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-hero__cta-primary">Quiero mi sistema →</a>
+        <a (click)="scrollTo('resultados'); $event.preventDefault();" href="#resultados" class="srv-hero__cta-secondary">Ver resultados reales</a>
+      </div>
+
+      <div class="srv-hero__trust">
+        <hr class="trust-divider" />
+        <div class="trust-content">
+          <span class="trust-label">CONFÍAN EN NOSOTROS</span>
+          <div class="trust-logos">
+            @for (logo of partnerLogos(); track $index) {
+              <img [src]="logo" alt="Logo Cliente" class="trust-logo-img" />
+            }
+          </div>
+        </div>
+        <div class="trust-badges">
+          <span class="trust-badge">GLOBAL SEMILLAS</span>
+          <span class="trust-badge">TROPICAL NURSERY</span>
+        </div>
+        <hr class="trust-divider" />
+      </div>
     </div>
   </section>
 
@@ -36,13 +63,22 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="srv-nadie">
     <div class="srv-nadie__content">
-      <span class="srv-nadie__badge">EL PROBLEMA</span>
+      <span class="srv-nadie__pretitle">ANTES DE SEGUIR, MIRA ESTO</span>
       <h2 class="srv-nadie__title">
-        Lo que ninguna agencia<br>te dice sobre la pauta en clínicas
+        Lo que ninguna agencia te dice sobre la pauta en clínicas
       </h2>
-      <p class="srv-nadie__text">
-        La mayoría de agencias te prometen «más leads» sin entender que un lead en el sector salud no es igual que en un e-commerce. Un paciente necesita confianza, seguimiento y un proceso de decisión más largo. Por eso, invertir en pauta sin un sistema detrás es tirar dinero.
+      <p class="srv-nadie__subtitle">
+        Te explicamos exactamente por qué tu pauta no está llenando tu agenda — y cómo lo resolvemos
       </p>
+
+      <div class="srv-nadie__video-card">
+        <div class="play-button">
+          <svg class="play-icon" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" fill="currentColor"></path>
+          </svg>
+        </div>
+        <span class="video-status">Video — próximamente</span>
+      </div>
     </div>
   </section>
 
@@ -51,36 +87,45 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="srv-pain">
     <div class="srv-pain__header">
+      <span class="srv-pain__pretitle">EL PROBLEMA QUE NADIE DICE EN VOZ ALTA</span>
       <h2 class="srv-pain__title">
-        Tu pauta genera más gastos.<br>Tu agenda sigue <em>con huecos.</em>
+        Tu pauta genera mensajes.<br>Tu agenda sigue <span class="highlight">con huecos.</span>
       </h2>
+      <p class="srv-pain__subtitle">
+        Invertiste en Meta Ads, tienes conversaciones en WhatsApp... pero los pacientes no llegan a la silla. Esto es lo que está pasando realmente.
+      </p>
     </div>
-    <div class="srv-pain__cards">
+
+    <div class="srv-pain__cards-container">
       <div class="srv-pain__card">
-        <div class="srv-pain__icon">
-          <span class="material-symbols-outlined">money_off</span>
-        </div>
-        <h3 class="srv-pain__card-title">Gastas sin retorno</h3>
+        <div class="srv-pain__icon">🤯</div>
+        <h3 class="srv-pain__card-title">Leads sin intención real</h3>
         <p class="srv-pain__card-text">
-          Inviertes en Meta Ads o Google Ads, pero los leads que llegan nunca agendan. Tu costo por paciente real sigue subiendo mes a mes.
+          Mensajes de curiosos que nunca agendan. Tu equipo pierde horas calificando gente que jamás va a comprar.
         </p>
       </div>
+
       <div class="srv-pain__card">
-        <div class="srv-pain__icon">
-          <span class="material-symbols-outlined">person_off</span>
-        </div>
-        <h3 class="srv-pain__card-title">Leads fantasma</h3>
+        <div class="srv-pain__icon">📬</div>
+        <h3 class="srv-pain__card-title">Agenda con ausencias</h3>
         <p class="srv-pain__card-text">
-          Recibes formularios de contacto pero nadie contesta cuando llamas. Los leads se enfrían porque no hay un sistema de seguimiento inmediato.
+          Pacientes que agendan y no asisten. Sin seguimiento automático, cada ausencia es dinero que ya no vuelve.
         </p>
       </div>
+
       <div class="srv-pain__card">
-        <div class="srv-pain__icon">
-          <span class="material-symbols-outlined">trending_down</span>
-        </div>
-        <h3 class="srv-pain__card-title">Agenda impredecible</h3>
+        <div class="srv-pain__icon">💸</div>
+        <h3 class="srv-pain__card-title">Pauta sin retorno claro</h3>
         <p class="srv-pain__card-text">
-          Algunos meses tienes pacientes y otros no. Dependes de referidos y no tienes control sobre cuántos pacientes nuevos llegan cada semana.
+          Gastas en Meta Ads pero no sabes qué campaña genera pacientes reales ni cuánto te cuesta cada uno.
+        </p>
+      </div>
+
+      <div class="srv-pain__card">
+        <div class="srv-pain__icon">🔄</div>
+        <h3 class="srv-pain__card-title">Dependencia de referidos</h3>
+        <p class="srv-pain__card-text">
+          Tu clínica crece o decrece según el boca a boca. Sin un sistema, no hay crecimiento predecible ni escalable.
         </p>
       </div>
     </div>
@@ -91,40 +136,56 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="srv-capas">
     <div class="srv-capas__header">
-      <span class="srv-capas__badge">NUESTRA METODOLOGÍA</span>
+      <span class="srv-capas__pretitle">LA SOLUCIÓN</span>
       <h2 class="srv-capas__title">
-        Un sistema en 3 capas que convierte tráfico en <em>pacientes certificados.</em>
+        Un sistema en 3 capas que convierte tráfico en <span class="highlight">pacientes calificados</span>
       </h2>
+      <p class="srv-capas__subtitle">
+        No es publicidad suelta. Es infraestructura de adquisición completa, integrada y con datos reales.
+      </p>
     </div>
+
     <div class="srv-capas__steps">
       <!-- Step 1 -->
       <div class="srv-capas__step">
-        <div class="srv-capas__number">1</div>
+        <div class="srv-capas__number">01</div>
         <div class="srv-capas__step-content">
-          <h3 class="srv-capas__step-title">Atracción Inteligente</h3>
+          <h3 class="srv-capas__step-title">Meta Ads que eliminan curiosos desde el anuncio</h3>
           <p class="srv-capas__step-text">
-            Creamos campañas de pauta segmentadas específicamente para el sector clínico. No usamos plantillas genéricas: cada anuncio está diseñado para atraer pacientes reales con intención de agendar.
+            Campañas diseñadas para atraer pacientes con intención real. No alcance, no impresiones — pacientes que ya tienen el problema que tú resuelves y el dinero para pagarlo.
           </p>
+          <div class="srv-capas__step-tags">
+            <span class="srv-capas__step-tag">META ADS · CREATIVIDADES · COPY</span>
+          </div>
         </div>
       </div>
+
       <!-- Step 2 -->
       <div class="srv-capas__step">
-        <div class="srv-capas__number">2</div>
+        <div class="srv-capas__number">02</div>
         <div class="srv-capas__step-content">
-          <h3 class="srv-capas__step-title">Automatización y Seguimiento</h3>
+          <h3 class="srv-capas__step-title">Landing que filtra y convierte antes del contacto</h3>
           <p class="srv-capas__step-text">
-            Cada lead que entra recibe seguimiento automático por WhatsApp, correo electrónico y SMS. No se pierde ni un solo contacto. El sistema responde en segundos, no en horas.
+            Una página construida para ese anuncio específico, con un formulario que precalifica al prospecto antes de que llegue a WhatsApp. Tu equipo solo habla con quien ya quiere y puede pagar.
           </p>
+          <div class="srv-capas__step-tags">
+            <span class="srv-capas__step-tag">LANDING · FORMULARIO CALIFICADO · LOVABLE</span>
+          </div>
         </div>
       </div>
+
       <!-- Step 3 -->
       <div class="srv-capas__step">
-        <div class="srv-capas__number">3</div>
+        <div class="srv-capas__number">03</div>
         <div class="srv-capas__step-content">
-          <h3 class="srv-capas__step-title">Conversión y Agendamiento</h3>
+          <h3 class="srv-capas__step-title">Seguimiento automático y calificación 24/7</h3>
           <p class="srv-capas__step-text">
-            Los leads calificados son llevados directamente a tu agenda. Con embudos optimizados y landing pages de alto rendimiento, convertimos tráfico frío en pacientes que pagan.
+            Un agente de IA califica a los leads en segundos, responde dudas frecuentes e incentiva el agendamiento por WhatsApp. Cero demoras, cero pacientes enfriándose.
           </p>
+          <div class="srv-capas__step-tags">
+            <span class="srv-capas__step-tag">IA CHATBOT · WHATSAPP AUTOMATION · CRM</span>
+          </div>
+          <a href="/home#contacto" class="srv-capas__step-btn">Quiero este sistema para mi clínica →</a>
         </div>
       </div>
     </div>
@@ -137,30 +198,79 @@
     <div class="srv-auto__content">
       <span class="srv-auto__badge">TECNOLOGÍA</span>
       <h2 class="srv-auto__title">
-        Sistema de Adquisición <em>Automatizado</em>
+        Sistema de Adquisición <span class="highlight">Automatizado</span>
       </h2>
       <p class="srv-auto__text">
         Nuestro sistema integra todas las herramientas que necesitas para captar, nutrir y convertir pacientes de forma automática. Desde el primer clic hasta la cita agendada, todo está conectado.
       </p>
-      <div class="srv-auto__visual">
+
+      <div class="srv-auto__flow-card">
         <div class="srv-auto__flow">
+          <!-- Step 1 -->
           <div class="srv-auto__flow-item">
-            <span class="material-symbols-outlined">ads_click</span>
+            <div class="flow-icon-wrapper">
+              <svg class="flow-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              </svg>
+            </div>
             <span>Anuncios</span>
           </div>
-          <div class="srv-auto__flow-arrow">→</div>
+
+          <div class="srv-auto__flow-arrow">
+            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+
+          <!-- Step 2 -->
           <div class="srv-auto__flow-item">
-            <span class="material-symbols-outlined">web</span>
+            <div class="flow-icon-wrapper">
+              <svg class="flow-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
             <span>Landing Page</span>
           </div>
-          <div class="srv-auto__flow-arrow">→</div>
+
+          <div class="srv-auto__flow-arrow">
+            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+
+          <!-- Step 3 -->
           <div class="srv-auto__flow-item">
-            <span class="material-symbols-outlined">smart_toy</span>
+            <div class="flow-icon-wrapper">
+              <svg class="flow-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M12 2v2M8 5h8M6 14h.01M18 14h.01M12 17h.01"></path>
+              </svg>
+            </div>
             <span>Automatización</span>
           </div>
-          <div class="srv-auto__flow-arrow">→</div>
+
+          <div class="srv-auto__flow-arrow">
+            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+
+          <!-- Step 4 -->
           <div class="srv-auto__flow-item">
-            <span class="material-symbols-outlined">calendar_month</span>
+            <div class="flow-icon-wrapper">
+              <svg class="flow-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
             <span>Agenda</span>
           </div>
         </div>
@@ -173,41 +283,69 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="srv-incluido">
     <div class="srv-incluido__header">
-      <span class="srv-incluido__badge">INCLUIDO</span>
+      <span class="srv-incluido__pretitle">TODO LO QUE INCLUYE</span>
       <h2 class="srv-incluido__title">
-        Todo lo que construimos <em>para ti</em>
+        Sistema de Adquisición <span class="highlight">Automatizado</span>
       </h2>
+      <p class="srv-incluido__subtitle">
+        Sprint de 90 días. Implementación completa. Todo conectado.
+      </p>
     </div>
-    <div class="srv-incluido__grid">
-      <div class="srv-incluido__item">
-        <span class="material-symbols-outlined">campaign</span>
-        <h3>Campañas de Pauta</h3>
-        <p>Meta Ads y Google Ads gestionados con estrategia clínica especializada.</p>
+
+    <div class="srv-incluido__card">
+      <div class="srv-incluido__card-badge">
+        <span class="rocket-emoji">🚀</span> SPRINT 90 DÍAS
       </div>
-      <div class="srv-incluido__item">
-        <span class="material-symbols-outlined">web</span>
-        <h3>Landing Pages</h3>
-        <p>Páginas de aterrizaje de alto rendimiento optimizadas para conversión.</p>
+      <h3 class="srv-incluido__card-title">Todo lo que construimos para ti</h3>
+      <p class="srv-incluido__card-text">
+        Un sistema completo, no un servicio suelto. Cada pieza conectada con la siguiente.
+      </p>
+
+      <div class="srv-incluido__features-grid">
+        <!-- Col 1 -->
+        <div class="srv-incluido__features-col">
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Diagnóstico y reestructuración de oferta — para que venda más y convierta mejor</p>
+          </div>
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Landing page con formulario calificado — filtra al prospecto antes del contacto</p>
+          </div>
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Creatividades y copies para anuncios, landing y WhatsApp</p>
+          </div>
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Ajustes estratégicos continuos — validamos antes de escalar</p>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="srv-incluido__features-col">
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Campaña Meta Ads precalificada — anuncios que eliminan curiosos desde el inicio</p>
+          </div>
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Agente IA en WhatsApp — califica el lead y agenda automáticamente 24/7</p>
+          </div>
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Reportes semanales + KPIs definidos desde el primer día</p>
+          </div>
+          <div class="srv-incluido__feature-item">
+            <span class="check-icon">✓</span>
+            <p class="feature-text">Proceso de cierre comercial — estructura de venta probada con datos del sector</p>
+          </div>
+        </div>
       </div>
-      <div class="srv-incluido__item">
-        <span class="material-symbols-outlined">smart_toy</span>
-        <h3>Chatbot con IA</h3>
-        <p>Respuesta inmediata a tus leads 24/7 con inteligencia artificial.</p>
-      </div>
-      <div class="srv-incluido__item">
-        <span class="material-symbols-outlined">monitoring</span>
-        <h3>Dashboard de Métricas</h3>
-        <p>Panel de control en tiempo real con tus KPIs más importantes.</p>
-      </div>
-      <div class="srv-incluido__item">
-        <span class="material-symbols-outlined">mail</span>
-        <h3>Email Marketing</h3>
-        <p>Secuencias automatizadas para nutrir y convertir leads fríos.</p>
-      </div>
-      <div class="srv-incluido__item">
-        <span class="material-symbols-outlined">support_agent</span>
-        <h3>Soporte Dedicado</h3>
-        <p>Equipo asignado a tu cuenta con reuniones semanales de seguimiento.</p>
+
+      <div class="srv-incluido__footer">
+        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-incluido__btn">Quiero implementar este sistema →</a>
+        <span class="srv-incluido__limit">Cupos limitados por mes</span>
       </div>
     </div>
   </section>
@@ -215,65 +353,305 @@
   <!-- ═══════════════════════════════════════════════════════════════════
        S8 — MÉTRICAS / RESULTADOS
        ═══════════════════════════════════════════════════════════════════ -->
-  <section class="srv-metricas">
+  <section class="srv-metricas" id="resultados">
     <div class="srv-metricas__header">
-      <span class="srv-metricas__badge">RESULTADOS REALES</span>
+      <span class="srv-metricas__pretitle">RESULTADOS REALES</span>
       <h2 class="srv-metricas__title">
-        Números que <em>hablan solos</em>
+        Marcas que ya tienen un sistema. <span class="highlight">Estos son sus números.</span>
       </h2>
-      <p class="srv-metricas__subtitle">Resultados promedio de nuestros clientes en los primeros 90 días.</p>
+      <p class="srv-metricas__subtitle">
+        No prometemos vanity metrics. Campañas reales, costos reales, resultados medibles.
+      </p>
     </div>
-    <div class="srv-metricas__cards">
+
+    <div class="srv-metricas__cards-container">
       <div class="srv-metricas__card">
-        <span class="srv-metricas__value">+300%</span>
-        <span class="srv-metricas__label">Aumento en citas agendadas</span>
+        <span class="srv-metricas__value">+3.8x</span>
+        <span class="srv-metricas__label">Retorno promedio sobre inversión</span>
       </div>
+
       <div class="srv-metricas__card">
-        <span class="srv-metricas__value">-60%</span>
-        <span class="srv-metricas__label">Reducción en costo por paciente</span>
+        <span class="srv-metricas__value">-48%</span>
+        <span class="srv-metricas__label">Reducción en costo por lead</span>
       </div>
+
       <div class="srv-metricas__card">
-        <span class="srv-metricas__value">4.9★</span>
-        <span class="srv-metricas__label">Promedio en Google Reseñas</span>
+        <span class="srv-metricas__value">90 días</span>
+        <span class="srv-metricas__label">Para tener el sistema funcionando</span>
       </div>
+
       <div class="srv-metricas__card">
-        <span class="srv-metricas__value">85%</span>
-        <span class="srv-metricas__label">Tasa de asistencia a citas</span>
+        <span class="srv-metricas__value">24/7</span>
+        <span class="srv-metricas__label">El agente IA nunca para</span>
+      </div>
+    </div>
+
+    <div class="srv-metricas__client-footer">
+      <div class="srv-metricas__client-left">
+        <div class="srv-metricas__client-badge">BOSANET</div>
+        <div class="srv-metricas__client-info">
+          <h4 class="srv-metricas__client-name">Bosanet — EE.UU.</h4>
+          <span class="srv-metricas__client-detail">Meta Ads completo · Mercado americano</span>
+        </div>
+      </div>
+      <div class="srv-metricas__client-right">
+        <span class="srv-metricas__status-badge">Cliente activo</span>
+      </div>
+    </div>
+
+    <!-- Bosanet screenshots & detailed stats -->
+    <div class="srv-metricas__bosanet-details">
+      <div class="srv-metricas__detail-cards">
+        <!-- Card 1 -->
+        <div class="srv-metricas__detail-card">
+          <div class="detail-card-inner">
+            <div class="detail-card-icon">📊</div>
+            <h4 class="detail-card-title">Pantallazo Ads Manager</h4>
+            <span class="detail-card-subtitle">Agregar captura real de Meta</span>
+          </div>
+          <span class="detail-card-label">Ads Manager · Resultados campaña</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="srv-metricas__detail-card">
+          <div class="detail-card-inner">
+            <div class="detail-card-icon">📈</div>
+            <h4 class="detail-card-title">Métricas de conversión</h4>
+            <span class="detail-card-subtitle">Agregar captura real de Meta</span>
+          </div>
+          <span class="detail-card-label">Bosanet · Leads calificados y CPL</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="srv-metricas__detail-card">
+          <div class="detail-card-inner">
+            <div class="detail-card-icon">🎯</div>
+            <h4 class="detail-card-title">Creatividades activas top</h4>
+            <span class="detail-card-subtitle">Agregar captura real de Meta</span>
+          </div>
+          <span class="detail-card-label">Bosanet · Anuncios ganadores</span>
+        </div>
+      </div>
+
+      <div class="srv-metricas__stats-row">
+        <div class="srv-metricas__stat-pill">
+          <span class="stat-arrow down">↓</span>
+          <span class="stat-highlight">CPL</span>
+          <span class="stat-desc">Costo por lead reducido</span>
+        </div>
+        <div class="srv-metricas__stat-pill">
+          <span class="stat-arrow up">↑</span>
+          <span class="stat-highlight">ROAS</span>
+          <span class="stat-desc">Retorno sobre inversión</span>
+        </div>
+        <div class="srv-metricas__stat-pill">
+          <span class="stat-highlight text-blue">EE.UU.</span>
+          <span class="stat-desc">Mercado americano activo</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="srv-metricas__divider" />
+
+    <!-- Sáfer Agrobiológicos block -->
+    <div class="srv-metricas__client-footer">
+      <div class="srv-metricas__client-left">
+        <div class="srv-metricas__client-badge badge-safer">SAFER</div>
+        <div class="srv-metricas__client-info">
+          <h4 class="srv-metricas__client-name">Sáfer Agrobiológicos</h4>
+          <span class="srv-metricas__client-detail">Meta Ads B2B · Crecimiento digital sostenido · Desde 2021</span>
+        </div>
+      </div>
+      <div class="srv-metricas__client-right">
+        <span class="srv-metricas__status-badge badge-success">Caso de éxito</span>
+      </div>
+    </div>
+
+    <!-- Sáfer screenshots & detailed stats -->
+    <div class="srv-metricas__safer-details">
+      <div class="srv-metricas__safer-cards">
+        <!-- Card 1 (Logo Card) -->
+        <div class="srv-metricas__safer-card logo-card">
+          <div class="safer-logo-wrapper">
+            <img src="/Logos/Logos-Clientes/logo-01.png" alt="Sáfer Logo" class="safer-card-img" />
+          </div>
+          <span class="safer-card-label">Safer · Branding y campaña digital</span>
+        </div>
+
+        <!-- Card 2 (Ads Manager Card) -->
+        <div class="srv-metricas__safer-card info-card">
+          <div class="safer-info-inner">
+            <div class="safer-info-icon">📊</div>
+            <h4 class="safer-info-title">Resultados Meta Ads B2B</h4>
+            <span class="safer-info-subtitle">Agregar captura real de Meta</span>
+          </div>
+          <span class="safer-card-label">Safer · Ads Manager · Campaña B2B</span>
+        </div>
+      </div>
+
+      <div class="srv-metricas__safer-stats">
+        <div class="srv-metricas__safer-stat-pill">
+          <span class="safer-stat-highlight">3x</span>
+          <span class="safer-stat-desc">Ventas B2B</span>
+        </div>
+        <div class="srv-metricas__safer-stat-pill">
+          <span class="safer-stat-highlight">-42%</span>
+          <span class="safer-stat-desc">Costo por venta</span>
+        </div>
+        <div class="srv-metricas__safer-stat-pill">
+          <span class="safer-stat-highlight">2.8M</span>
+          <span class="safer-stat-desc">Personas alcanzadas</span>
+        </div>
+      </div>
+
+      <div class="srv-metricas__safer-cta">
+        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-metricas__safer-btn">Quiero resultados como estos →</a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       S9 — CASO DE ÉXITO / LOGO
+       S9 — CTA FINAL ELEGANTE
        ═══════════════════════════════════════════════════════════════════ -->
-  <section class="srv-caso">
-    <div class="srv-caso__content">
-      <span class="srv-caso__badge">CASO DE ÉXITO</span>
-      <div class="srv-caso__logo-wrap">
-        <span class="srv-caso__logo-icon">
-          <span class="material-symbols-outlined">verified</span>
-        </span>
-        <span class="srv-caso__logo-text">SAFER</span>
-      </div>
-      <p class="srv-caso__description">
-        Clínica Safer pasó de 15 a 80 citas mensuales en solo 60 días con nuestro sistema de adquisición automatizado. Hoy su agenda está llena 3 semanas por adelantado.
+  <section class="srv-final-cta">
+    <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-final-cta__card">
+      <span class="srv-final-cta__pretitle">EMPECEMOS</span>
+      <h2 class="srv-final-cta__title">
+        ¿Tu clínica está lista para <span class="highlight">llenar su agenda?</span>
+      </h2>
+      <p class="srv-final-cta__text">
+        Si somos un buen match, agendamos una sesión de diagnóstico gratuita y te decimos exactamente qué construiríamos para ti.
       </p>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       S10 — FORMULARIO DE DIAGNÓSTICO
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="srv-contacto" id="contacto">
+    <div class="srv-contacto__container">
+      <div class="srv-contacto__header">
+        <h2 class="srv-contacto__title">Cuéntanos sobre ti</h2>
+        <p class="srv-contacto__subtitle">Tarda menos de 3 minutos · Te respondemos en menos de 24 horas</p>
+      </div>
+
+      <form class="srv-contacto__form" (submit)="onSubmit($event)">
+        <!-- Nombre & Apellidos side-by-side on desktop -->
+        <div class="srv-contacto__row-2">
+          <div class="srv-contacto__field">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="María" required />
+          </div>
+          <div class="srv-contacto__field">
+            <label for="apellidos">Apellidos *</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="García" required />
+          </div>
+        </div>
+
+        <div class="srv-contacto__field">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" placeholder="doctor@miclinica.com" required />
+        </div>
+
+        <div class="srv-contacto__field">
+          <label for="whatsapp">WhatsApp *</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 000 0000" required />
+        </div>
+
+        <div class="srv-contacto__field">
+          <label for="industria">¿Estás en la industria de clínicas estéticas u odontología? *</label>
+          <select id="industria" name="industria" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="si_estetica">Sí, clínica estética</option>
+            <option value="si_odontologica">Sí, clínica odontológica</option>
+            <option value="no_otra">No, otra industria</option>
+          </select>
+        </div>
+
+        <div class="srv-contacto__field">
+          <label for="presupuesto">¿Cuánto es tu presupuesto mensual para anuncios? *</label>
+          <span class="srv-contacto__field-helper">Así podremos enviarte las mejores estrategias para tu presupuesto.</span>
+          <select id="presupuesto" name="presupuesto" required>
+            <option value="" disabled selected>Selecciona un rango</option>
+            <option value="no_inverto">A. Aún no invierto en pauta</option>
+            <option value="menos_500cop">B. Menos de $500 mil COP / mes</option>
+            <option value="500cop_1mcop">C. $500 mil a $1 millón COP / mes</option>
+            <option value="1mcop_2mcop">D. $1 millón a $2 millones COP / mes</option>
+            <option value="mas_2mcop">E. Más de $2 millones COP / mes</option>
+          </select>
+        </div>
+
+        <div class="srv-contacto__field">
+          <label for="facturacion">¿Cuánto es tu facturación mensual actual? *</label>
+          <span class="srv-contacto__field-helper">Así podremos enviarte un plan de acción con un impacto real en la facturación de tu negocio.</span>
+          <select id="facturacion" name="facturacion" required>
+            <option value="" disabled selected>Selecciona un rango</option>
+            <option value="no_negocio">A. No he empezado aún un negocio</option>
+            <option value="empezando_ventas">B. Aún empezando en ventas</option>
+            <option value="menos_20mcop">C. Menos de $20 millones COP / mes</option>
+            <option value="20mcop_40mcop">D. $20 millones a $40 millones COP / mes</option>
+            <option value="40mcop_60mcop">E. $40 millones a $60 millones COP / mes</option>
+            <option value="60mcop_80mcop">F. $60 millones a $80 millones COP / mes</option>
+            <option value="mas_80mcop">G. Más de $80 millones COP / mes</option>
+          </select>
+        </div>
+
+        <div class="srv-contacto__field">
+          <label for="comienzo">¿Qué tan pronto te gustaría comenzar? *</label>
+          <select id="comienzo" name="comienzo" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="inmediatamente">Inmediatamente (esta semana)</option>
+            <option value="este_mes">Este mes</option>
+            <option value="1_2_meses">En 1 o 2 meses</option>
+            <option value="solo_explorando">Sólo estoy explorando</option>
+          </select>
+        </div>
+
+        <button type="submit" class="srv-contacto__submit" [disabled]="isSubmitting()">
+          {{ isSubmitting() ? 'Enviando...' : 'Solicitar diagnóstico gratuito →' }}
+        </button>
+
+        <p class="srv-contacto__disclaimer">
+          🔒 Tu información es confidencial y no la compartimos con nadie.<br>
+          Te contactaremos por WhatsApp en menos de 24 horas hábiles.
+        </p>
+      </form>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       S10 — CTA FINAL
+       S11 — PIE DE PÁGINA (FOOTER)
        ═══════════════════════════════════════════════════════════════════ -->
-  <section class="srv-cta">
-    <div class="srv-cta__content">
-      <h2 class="srv-cta__title">
-        ¿Tu clínica está lista para<br><em>llenar su agenda?</em>
-      </h2>
-      <p class="srv-cta__text">
-        Agenda una sesión de diagnóstico gratuita y descubre cómo nuestro sistema puede transformar tu clínica.
-      </p>
-      <a href="/home#contacto" class="srv-cta__btn">Quiero mi diagnóstico gratis →</a>
+  <footer class="srv-footer">
+    <div class="srv-footer__container">
+      <div class="srv-footer__logo-wrap">
+        <img src="/Logos/distinto_logo.png" alt="Distinto Logo" class="srv-footer__logo" />
+      </div>
+      <p class="srv-footer__copy">© 2025 Distinto Agencia Creativa · Colombia & EE.UU.</p>
+      <div class="srv-footer__links">
+        <a href="/home" class="srv-footer__link">Sitio web</a>
+        <span class="srv-footer__sep">·</span>
+        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-footer__link">Contáctanos</a>
+      </div>
     </div>
-  </section>
+  </footer>
+
+  <!-- Success Modal -->
+  @if (isSuccessModalOpen()) {
+  <div class="success-modal-backdrop">
+    <div class="success-modal-card">
+      <div class="success-modal-icon-container">
+        <span class="material-symbols-outlined success-modal-icon">check_circle</span>
+      </div>
+      <h3 class="success-modal-title">¡Gracias por compartir tus datos! 🎉</h3>
+      <p class="success-modal-text">
+        Hemos recibido tu información. En los próximos minutos uno de nuestros asesores te contactará por WhatsApp para brindarte toda la información y resolver tus dudas.
+      </p>
+      <button class="success-modal-btn" (click)="closeSuccessModal()" type="button">
+        Aceptar
+      </button>
+    </div>
+  </div>
+  }
 
 </main>
