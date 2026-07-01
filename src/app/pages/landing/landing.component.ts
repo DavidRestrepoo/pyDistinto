@@ -35,14 +35,14 @@ const TIMELINE_MAP: Record<string, string> = {
 };
 
 @Component({
-  selector: 'app-servicios',
+  selector: 'app-landing',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.scss'],
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ServiciosComponent {
+export class LandingComponent {
   private readonly homeService = inject(HomeService);
   readonly partnerLogos = signal<string[]>(this.homeService.getPartnerLogos());
   readonly isMobileMenuOpen = signal(false);

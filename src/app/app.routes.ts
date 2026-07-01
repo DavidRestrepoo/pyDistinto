@@ -9,8 +9,8 @@ export const routes: Routes = [
   },
   // TODO: add more lazy‑loaded pages here, e.g. { path: 'usuarios', loadComponent: () => import('./pages/usuarios/usuarios.component').then(m => m.UsuariosComponent) }
   {
-    path: 'servicios',
-    loadComponent: () => import('./pages/servicios/servicios.component').then(m => m.ServiciosComponent)
+    path: 'landing',
+    loadComponent: () => import('./pages/landing/landing.component').then(m => m.LandingComponent)
   },
   {
     path: 'terminos',
