@@ -287,6 +287,7 @@ em {
       justify-content: space-between;
       gap: 2rem;
       padding: 0.5rem 0;
+      overflow: hidden;
     }
 
     .trust-label {
@@ -298,25 +299,44 @@ em {
       text-transform: uppercase;
     }
 
-    .trust-logos {
+    .client-strip-wrapper {
+      flex-grow: 1;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 2rem;
-      flex-grow: 1;
     }
 
-    .trust-logo-img {
-      height: 20px;
+    .client-strip-track {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      width: max-content;
+      animation: scroll-marquee 25s linear infinite;
+    }
+
+    .client-logo-img {
+      height: 100px;
       width: auto;
+      max-width: 220px;
       object-fit: contain;
+      pointer-events: none;
       filter: grayscale(1) brightness(0.7) opacity(0.5);
-      transition: filter 0.3s ease;
+      transition: filter 0.3s ease, transform 0.2s ease;
 
       &:hover {
         filter: grayscale(0) brightness(1) opacity(0.9);
       }
+
+      &[src*="logo-01.png"] { transform: scale(1.5); }
+      &[src*="logo-02.png"] { transform: scale(1.65); }
+      &[src*="logo-03.png"] { transform: scale(1.5); }
+      &[src*="logo-04.png"] { transform: scale(2.4); }
+      &[src*="logo-05.png"] { transform: scale(1.65); }
+      &[src*="logo-07.png"] { transform: scale(0.98); }
+      &[src*="logo-08.png"] { transform: scale(0.85); }
+      &[src*="logo-09.png"] { transform: scale(0.85); }
     }
 
     .trust-badges {
@@ -1745,14 +1765,17 @@ em {
         align-items: center;
       }
 
-      .trust-logos {
-        justify-content: center;
-        gap: 1.25rem;
+      .client-strip-wrapper {
         width: 100%;
       }
 
-      .trust-logo-img {
-        height: 16px;
+      .client-logo-img {
+        height: 54px !important;
+        max-width: 130px !important;
+      }
+
+      .client-strip-track {
+        gap: 1.75rem !important;
       }
 
       .trust-badges {
@@ -2072,5 +2095,14 @@ em {
 
   .srv-capas__step {
     gap: 1rem;
+  }
+}
+
+@keyframes scroll-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 3rem));
   }
 }

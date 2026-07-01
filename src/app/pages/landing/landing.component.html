@@ -43,10 +43,15 @@
         <hr class="trust-divider" />
         <div class="trust-content">
           <span class="trust-label">CONFÍAN EN NOSOTROS</span>
-          <div class="trust-logos">
-            @for (logo of partnerLogos(); track $index) {
-              <img [src]="logo" alt="Logo Cliente" class="trust-logo-img" />
-            }
+          <div class="client-strip-wrapper" aria-label="Marcas aliadas">
+            <div class="client-strip-track">
+              @for (logo of partnerLogos(); track $index) {
+                <img [src]="logo" alt="Logo Cliente" class="client-logo-img" />
+              }
+              @for (logo of partnerLogos(); track 'dup-' + $index) {
+                <img [src]="logo" alt="" class="client-logo-img" aria-hidden="true" />
+              }
+            </div>
           </div>
         </div>
         <div class="trust-badges">
