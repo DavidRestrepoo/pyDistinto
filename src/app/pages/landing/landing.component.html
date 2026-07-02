@@ -585,20 +585,55 @@
   <!-- ═══════════════════════════════════════════════════════════════════
        S11 — PIE DE PÁGINA (FOOTER)
        ═══════════════════════════════════════════════════════════════════ -->
-  <footer class="srv-footer">
-    <div class="srv-footer__container">
-      <div class="srv-footer__logo-wrap">
-        <img src="/Logos/distinto_logo.png" alt="Distinto Logo" class="srv-footer__logo" />
+  <!-- Session 12: Premium Footer -->
+  <footer class="session-12">
+    <div class="s12-container">
+      <!-- Top Row -->
+      <div class="s12-top-row">
+        <!-- Logo Block -->
+        <a (click)="scrollTo('inicio'); $event.preventDefault();" href="#inicio" aria-label="Distinto inicio" class="menu-brand">
+          <img src="/Logos/distinto_logo.png" alt="Distinto Agencia Creativa" class="menu-brand__logo" />
+        </a>
+
+        <!-- Social Icons Block -->
+        <div class="s12-social-block">
+          <span class="s12-siguenos">Síguenos</span>
+          <div class="s12-social-icons">
+            <a href="https://www.instagram.com/distintoagencia/" class="s12-icon-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61581292355241" class="s12-icon-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@distinto.agencia" class="s12-icon-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-nav-cta s12-cta-btn">¡HABLEMOS!</a>
       </div>
-      <p class="srv-footer__copy">© 2025 Distinto Agencia Creativa · Colombia & EE.UU.</p>
-      <div class="srv-footer__links">
-        <a routerLink="/home" class="srv-footer__link">Sitio web</a>
-        <span class="srv-footer__sep">·</span>
-        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-footer__link">Contáctanos</a>
-        <span class="srv-footer__sep">·</span>
-        <a routerLink="/terminos" class="srv-footer__link">Términos y condiciones</a>
-        <span class="srv-footer__sep">·</span>
-        <a routerLink="/privacidad" class="srv-footer__link">Política de privacidad</a>
+
+      <!-- Divider -->
+      <hr class="s12-divider" />
+
+      <!-- Bottom Row -->
+      <div class="s12-bottom-row">
+        <p class="s12-copy">© 2026 Distinto Agencia Creativa · Colombia & EE.UU.</p>
+        <div class="s12-links">
+          <a routerLink="/home" class="s12-link">Sitio web</a>
+          <a routerLink="/terminos" class="s12-link">Términos y condiciones</a>
+          <a routerLink="/privacidad" class="s12-link">Política de privacidad</a>
+        </div>
       </div>
     </div>
   </footer>
