@@ -38,27 +38,19 @@
         <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-hero__cta-primary">Quiero mi sistema</a>
         <a (click)="scrollTo('resultados'); $event.preventDefault();" href="#resultados" class="srv-hero__cta-secondary">Ver resultados reales</a>
       </div>
+    </div>
+  </section>
 
-      <div class="srv-hero__trust">
-        <hr class="trust-divider" />
-        <div class="trust-content">
-          <span class="trust-label">CONFÍAN EN NOSOTROS</span>
-          <div class="client-strip-wrapper" aria-label="Marcas aliadas">
-            <div class="client-strip-track">
-              @for (logo of partnerLogos(); track $index) {
-                <img [src]="logo" alt="Logo Cliente" class="client-logo-img" />
-              }
-              @for (logo of partnerLogos(); track 'dup-' + $index) {
-                <img [src]="logo" alt="" class="client-logo-img" aria-hidden="true" />
-              }
-            </div>
-          </div>
-        </div>
-        <div class="trust-badges">
-          <span class="trust-badge">GLOBAL SEMILLAS</span>
-          <span class="trust-badge">TROPICAL NURSERY</span>
-        </div>
-        <hr class="trust-divider" />
+  <!-- Session 3: Carrusel de marcas aliadas (full-width marquee) -->
+  <section class="srv-marquee" aria-label="Carrusel de marcas aliadas">
+    <div class="client-strip-wrapper" aria-label="Marcas aliadas">
+      <div class="client-strip-track">
+        @for (logo of partnerLogos(); track $index) {
+          <img [src]="logo" alt="Logo Cliente" class="client-logo-img" />
+        }
+        @for (logo of partnerLogos(); track 'dup-' + $index) {
+          <img [src]="logo" alt="" class="client-logo-img" aria-hidden="true" />
+        }
       </div>
     </div>
   </section>
@@ -190,7 +182,7 @@
           <div class="srv-capas__step-tags">
             <span class="srv-capas__step-tag">IA CHATBOT · WHATSAPP AUTOMATION · CRM</span>
           </div>
-          <a href="/home#contacto" class="srv-capas__step-btn">Quiero este sistema para mi clínica</a>
+          <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-capas__step-btn">Quiero este sistema para mi clínica</a>
         </div>
       </div>
     </div>

@@ -64,7 +64,17 @@ export class LandingComponent {
   scrollTo(id: string): void {
     this.closeMobileMenu();
     const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      const navbar = document.querySelector('.srv-nav') as HTMLElement;
+      const navbarHeight = navbar ? navbar.offsetHeight : 72;
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }
 
   onSubmit(event: Event): void {

@@ -267,97 +267,53 @@ em {
   }
 
   &__trust {
-    margin-top: 3.5rem;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  S2.5 — BRAND MARQUEE (equivalent to session-3 in home page)
+// ═══════════════════════════════════════════════════════════════════
+.srv-marquee {
+  padding: 0;
+  background-color: #000000;
+
+  .client-strip-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 2rem $spacing-gutter;
+    border-radius: 0;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     display: flex;
-    flex-direction: column;
     align-items: center;
+  }
 
-    .trust-divider {
-      width: 100%;
-      border: 0;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0) 100%);
-      margin: 1.5rem 0;
-    }
+  .client-strip-track {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+    animation: scroll-marquee 25s linear infinite;
+  }
 
-    .trust-content {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 0.5rem 0;
-      overflow: hidden;
-    }
+  .client-logo-img {
+    height: 100px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    pointer-events: none;
+    transition: transform 0.2s ease;
 
-    .trust-label {
-      color: #565d70;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-      text-transform: uppercase;
-    }
-
-    .client-strip-wrapper {
-      flex-grow: 1;
-      overflow: hidden;
-      position: relative;
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      display: flex;
-      align-items: center;
-    }
-
-    .client-strip-track {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      width: max-content;
-      animation: scroll-marquee 25s linear infinite;
-    }
-
-    .client-logo-img {
-      height: 100px;
-      width: auto;
-      max-width: 220px;
-      object-fit: contain;
-      pointer-events: none;
-      filter: grayscale(1) brightness(0.7) opacity(0.5);
-      transition: filter 0.3s ease, transform 0.2s ease;
-
-      &:hover {
-        filter: grayscale(0) brightness(1) opacity(0.9);
-      }
-
-      &[src*="logo-01.png"] { transform: scale(1.5); }
-      &[src*="logo-02.png"] { transform: scale(1.65); }
-      &[src*="logo-03.png"] { transform: scale(1.5); }
-      &[src*="logo-04.png"] { transform: scale(2.4); }
-      &[src*="logo-05.png"] { transform: scale(1.65); }
-      &[src*="logo-07.png"] { transform: scale(0.98); }
-      &[src*="logo-08.png"] { transform: scale(0.85); }
-      &[src*="logo-09.png"] { transform: scale(0.85); }
-    }
-
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .trust-badge {
-      display: inline-block;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #64748b;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      padding: 0.3rem 0.8rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.02);
-    }
+    &[src*="logo-01.png"] { transform: scale(1.5); }
+    &[src*="logo-02.png"] { transform: scale(1.65); }
+    &[src*="logo-03.png"] { transform: scale(1.5); }
+    &[src*="logo-04.png"] { transform: scale(2.4); }
+    &[src*="logo-05.png"] { transform: scale(1.65); }
+    &[src*="logo-07.png"] { transform: scale(0.98); }
+    &[src*="logo-08.png"] { transform: scale(0.85); }
+    &[src*="logo-09.png"] { transform: scale(0.85); }
   }
 }
 
@@ -950,7 +906,7 @@ em {
 //  S8 — MÉTRICAS
 // ═══════════════════════════════════════════════════════════════════
 .srv-metricas {
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 0;
   background: #0b0e14;
 
   &__header {
@@ -1345,7 +1301,7 @@ em {
 //  S9 — CTA FINAL ELEGANTE
 // ═══════════════════════════════════════════════════════════════════
 .srv-final-cta {
-  padding: 6rem 2rem;
+  padding: 2.5rem 2rem 0;
   background: #0b0e14;
   display: flex;
   justify-content: center;
@@ -1407,7 +1363,7 @@ em {
 //  S10 — FORMULARIO DE DIAGNÓSTICO
 // ═══════════════════════════════════════════════════════════════════
 .srv-contacto {
-  padding: 6rem 2rem;
+  padding: 2.5rem 2rem 6rem;
   background: #0b0e14;
   display: flex;
   justify-content: center;
@@ -1821,7 +1777,7 @@ em {
   }
 
   .srv-hero {
-    padding: 5rem 1.25rem 4rem;
+    padding: 4rem 1rem 5rem;
 
     &__title {
       font-size: 1.85rem;
@@ -1867,41 +1823,20 @@ em {
       white-space: nowrap;
       border-radius: 6px;
     }
+  }
 
-    &__trust {
-      margin-top: 2.5rem;
-      width: 100%;
-
-      .trust-content {
-        flex-direction: column;
-        gap: 1.25rem;
-        text-align: center;
-        align-items: center;
-      }
-
-      .client-strip-wrapper {
-        width: 100%;
-      }
-
-      .client-logo-img {
-        height: 54px !important;
-        max-width: 130px !important;
-      }
-
-      .client-strip-track {
-        gap: 1.75rem !important;
-      }
-
-      .trust-badges {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-      }
+  .srv-marquee {
+    .client-logo-img {
+      height: 54px !important;
+      max-width: 130px !important;
+    }
+    .client-strip-track {
+      gap: 1.75rem !important;
     }
   }
 
   .srv-nadie {
-    padding: 4rem 1.25rem;
+    padding: 3.5rem 1rem;
 
     &__title {
       font-size: 1.8rem;
@@ -1933,7 +1868,7 @@ em {
   }
 
   .srv-pain {
-    padding: 4rem 1.25rem;
+    padding: 3.5rem 1rem;
 
     &__cards-container {
       grid-template-columns: 1fr;
@@ -1952,7 +1887,7 @@ em {
   }
 
   .srv-capas {
-    padding: 4rem 1.25rem;
+    padding: 3.5rem 1rem;
 
     &__header {
       margin-bottom: 2.5rem;
@@ -1967,28 +1902,57 @@ em {
     }
 
     &__step {
-      flex-direction: column;
-      gap: 1.25rem;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      row-gap: 0.75rem;
+      column-gap: 1rem;
       padding: 2rem 0;
+      align-items: center;
+    }
+
+    &__step-content {
+      display: contents;
     }
 
     &__number {
       width: 40px;
       height: 40px;
       font-size: 1rem;
+      grid-column: 1;
+      grid-row: 1;
     }
 
     &__step-title {
+      grid-column: 2;
+      grid-row: 1;
       font-size: 1.15rem;
+      margin: 0;
+      line-height: 1.35;
     }
 
     &__step-text {
+      grid-column: 1 / span 2;
+      grid-row: 2;
       font-size: 0.9rem;
+      margin: 0;
+    }
+
+    &__step-tags {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      margin-top: 0.25rem;
+    }
+
+    &__step-btn {
+      grid-column: 1 / span 2;
+      grid-row: 4;
+      margin-top: 0.75rem;
+      text-align: center;
     }
   }
 
   .srv-auto {
-    padding: 4rem 1.25rem;
+    padding: 3.5rem 1rem;
 
     &__title {
       font-size: 1.8rem;
@@ -2049,7 +2013,7 @@ em {
   }
 
   .srv-metricas {
-    padding: 4rem 1.25rem;
+    padding: 3.5rem 1rem 0;
 
     &__title {
       font-size: 1.8rem;
@@ -2133,7 +2097,7 @@ em {
   }
 
   .srv-final-cta {
-    padding: 4rem 1.25rem;
+    padding: 1.5rem 1rem 0;
 
     &__card {
       padding: 3rem 1.5rem;
@@ -2150,7 +2114,7 @@ em {
   }
 
   .srv-contacto {
-    padding: 4rem 1.25rem;
+    padding: 1.5rem 1rem 3.5rem;
 
     &__header {
       margin-bottom: 2rem;
@@ -2185,6 +2149,19 @@ em {
 @media (max-width: 480px) {
   .srv-hero__title {
     font-size: 1.6rem;
+  }
+
+  .srv-hero__actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 1rem !important;
+
+    a {
+      width: 100% !important;
+      padding: 0.9rem 1.5rem !important;
+      font-size: 0.95rem !important;
+      text-align: center !important;
+    }
   }
 
   .srv-capas__step {
