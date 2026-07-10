@@ -84,7 +84,7 @@ em {
 
 .srv-nav-cta {
   display: inline-block;
-  background: linear-gradient(135deg, #597bf2, #3b5de7);
+  background: #73C9F4;
   color: #fff;
   font-weight: 700;
   font-size: 0.85rem;
@@ -92,11 +92,12 @@ em {
   border-radius: 0.5rem;
   text-decoration: none;
   letter-spacing: 0.04em;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 
   &:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(89, 123, 242, 0.35);
+    background-color: #9adcf8;
+    box-shadow: 0 4px 20px rgba(115, 201, 244, 0.35);
   }
 }
 
@@ -233,7 +234,7 @@ em {
 
   &__cta-primary {
     display: inline-block;
-    background: #5db7f5;
+    background: #73C9F4;
     color: #0b0e14;
     font-weight: 700;
     font-size: 1rem;
@@ -244,7 +245,7 @@ em {
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(93, 183, 245, 0.3);
+      box-shadow: 0 6px 20px rgba(115, 201, 244, 0.3);
     }
   }
 
@@ -625,7 +626,7 @@ em {
 
   &__step-btn {
     display: inline-block;
-    background: #5db7f5;
+    background: #73C9F4;
     color: #0b0e14;
     font-weight: 700;
     font-size: 0.95rem;
@@ -637,8 +638,8 @@ em {
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(93, 183, 245, 0.3);
-      background-color: #79c8ff;
+      box-shadow: 0 6px 20px rgba(115, 201, 244, 0.3);
+      background-color: #9adcf8;
     }
   }
 }
@@ -1282,7 +1283,7 @@ em {
 
   &__safer-btn {
     display: inline-block;
-    background: #5db7f5;
+    background: #73C9F4;
     color: #0b0e14;
     font-weight: 700;
     padding: 1rem 2.5rem;
@@ -1292,7 +1293,7 @@ em {
 
     &:hover {
       transform: translateY(-2px);
-      background-color: #79c8ff;
+      background-color: #9adcf8;
     }
   }
 }
@@ -1467,7 +1468,7 @@ em {
   &__submit {
     display: block;
     width: 100%;
-    background: #5db7f5;
+    background: #73C9F4;
     color: #0b0e14;
     font-weight: 700;
     font-size: 1.05rem;
@@ -1479,7 +1480,7 @@ em {
     margin-top: 1rem;
 
     &:hover:not(:disabled) {
-      background-color: #79c8ff;
+      background-color: #9adcf8;
       transform: translateY(-1px);
     }
 
@@ -1561,7 +1562,7 @@ em {
 }
 
 .success-modal-btn {
-  background-color: #5db7f5;
+  background-color: #73C9F4;
   color: #0b0e14;
   font-weight: 700;
   font-size: 0.95rem;
@@ -1574,7 +1575,7 @@ em {
 
   &:hover {
     transform: scale(1.02);
-    background-color: #79c8ff;
+    background-color: #9adcf8;
   }
 }
 
