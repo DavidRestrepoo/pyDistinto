@@ -51,7 +51,7 @@ export class LandingComponent {
   readonly isSuccessModalOpen = signal(false);
   readonly isSubmitting = signal(false);
 
-  private readonly GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzufRoqqwZ0Pec3sA9RhEWjIYvo1yHv0w5fa-o1ouTb9O-vr6VrAz36upFxIn0brtbM/exec';
+  private readonly WEBHOOK_URL = 'https://distinto-1-n8n.hcsppm.easypanel.host/webhook/nuevo-lead-inbound';
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen.update(open => !open);
@@ -101,11 +101,10 @@ export class LandingComponent {
       comienzo: TIMELINE_MAP[rawComienzo] || rawComienzo
     };
 
-    fetch(this.GOOGLE_SCRIPT_URL, {
+    fetch(this.WEBHOOK_URL, {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
-        'Content-Type': 'text/plain'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
     })
@@ -114,7 +113,7 @@ export class LandingComponent {
       this.isSuccessModalOpen.set(true);
     })
     .catch(error => {
-      console.error('Error submitting form data:', error);
+      console.error('Error submitting form data to webhook:', error);
       this.isSubmitting.set(false);
       this.isSuccessModalOpen.set(true);
     });
