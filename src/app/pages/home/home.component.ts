@@ -66,7 +66,7 @@ export class HomeComponent {
   readonly isSubmitting = signal(false);
 
   // Google Script Web App URL placeholder
-  private readonly GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzufRoqqwZ0Pec3sA9RhEWjIYvo1yHv0w5fa-o1ouTb9O-vr6VrAz36upFxIn0brtbM/exec';
+  private readonly WEBHOOK_URL = 'https://distinto-1-n8n.hcsppm.easypanel.host/webhook/nuevo-lead-inbound';
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen.update(open => !open);
@@ -114,11 +114,10 @@ export class HomeComponent {
     };
 
 
-    fetch(this.GOOGLE_SCRIPT_URL, {
+    fetch(this.WEBHOOK_URL, {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
-        'Content-Type': 'text/plain'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
     })
@@ -127,7 +126,7 @@ export class HomeComponent {
       this.isSuccessModalOpen.set(true);
     })
     .catch(error => {
-      console.error('Error submitting form data to sheet:', error);
+      console.error('Error submitting form data to webhook:', error);
       this.isSubmitting.set(false);
       // Fallback: open modal anyway to keep user flow working
       this.isSuccessModalOpen.set(true);
