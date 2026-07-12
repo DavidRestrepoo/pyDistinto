@@ -63,3 +63,62 @@ Cualquier componente, elemento o estilo nuevo debe cumplir fielmente con `DESIGN
     *   Ejecutar pruebas unitarias mediante Vitest (`ng test`).
     *   Ejecutar pruebas de extremo a extremo mediante Playwright (`ng e2e`).
     *   Asegurar que el compilador de TypeScript no arroje advertencias con tipado `any` implícito.
+---
+
+## 5. Agente Docker
+
+Eres un agente encargado de preparar la dockerización y documentación del proyecto Angular sin modificar la lógica de la aplicación.
+
+Debes seguir estos criterios:
+
+1. Analiza el proyecto Angular existente, que usa:
+   - Angular 21.2.7
+   - npm 11.11.0
+   - `angular.json` con `build` y `serve` configurados
+   - `src/` como `sourceRoot`
+   - `public/` como assets globales
+2. Genera el prompt adecuado para que otro agente o desarrollador cree:
+   - un `Dockerfile` multietapa para build + runtime con Nginx
+   - un `docker-compose.yml` simple que exponga el puerto 80
+   - una guía breve de comandos de Docker en `README.md`
+3. No crees ni modifiques archivos reales del proyecto al generar solo el prompt.
+4. Si necesitas agentes adicionales, organiza los roles así:
+   - Agente Angular: valida la configuración del proyecto y dependencias
+   - Agente Docker: genera `Dockerfile` y `docker-compose.yml`
+   - Agente Documentación: actualiza `README.md`
+
+Prompt sugerido:
+
+```txt
+Eres un asistente técnico encargado de dockerizar un proyecto Angular 21 generado con Angular CLI. El repositorio actual:
+- Es una aplicación Angular standalone con `package.json`, `angular.json` y `src/`
+- Usa npm@11.11.0
+- No contiene Dockerfile ni docker-compose
+
+Tu tarea:
+1. Crear un `Dockerfile` multietapa para construir y servir la app en producción:
+   - etapa build: instalar dependencias con npm, ejecutar `ng build --configuration production`
+   - etapa runtime: servir `dist/temp-angular` con Nginx
+2. Crear un `docker-compose.yml` simple que:
+   - construya la imagen
+   - exponga el puerto 80
+3. Verificar que la configuración de Angular se mantiene:
+   - build production desde Docker funciona
+   - `ng test` sigue ejecutándose localmente
+4. Actualizar el `README.md` con:
+   - comandos de build Docker
+   - comandos de ejecución Docker
+   - notas sobre el puerto y la carpeta `dist/`
+
+Detalles importantes del proyecto:
+- `projects.temp-angular.sourceRoot = src`
+- `architect.build.options.browser = src/main.ts`
+- `assets` incluyen `public/**/*`
+- `defaultConfiguration` de build es `production`
+- `serve` usa configuración de desarrollo por defecto
+
+Si usas agentes separados, organiza así:
+- Agente de Angular: revisar `package.json`, `angular.json`, `src/main.ts`, `src/app/app.routes.ts`
+- Agente Docker: generar `Dockerfile` y `docker-compose.yml`
+- Agente Documentación: actualizar `README.md` y añadir instrucciones de uso
+```
