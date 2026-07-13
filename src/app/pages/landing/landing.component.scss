@@ -1336,16 +1336,21 @@ em {
   &__safer-btn {
     display: inline-block;
     background: #73C9F4;
-    color: #0b0e14;
+    color: #ffffff;
     font-weight: 700;
     padding: 1rem 2.5rem;
-    border-radius: 6px;
+    border-radius: 999px;
     text-decoration: none;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+
+    .btn-break {
+      display: inline;
+    }
 
     &:hover {
       transform: translateY(-2px);
       background-color: #9adcf8;
+      box-shadow: 0 10px 24px rgba(91, 143, 255, 0.35);
     }
   }
 }
@@ -1455,11 +1460,11 @@ em {
   }
 
   &__form {
-    background: rgba(18, 22, 37, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 3.5rem 3rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -1478,41 +1483,52 @@ em {
     width: 100%;
 
     label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.6rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
       text-align: left;
+      font-family: 'Montserrat', sans-serif;
     }
 
     input, select {
       width: 100%;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(0, 0, 0, 0.2);
-      padding: 0.9rem 1.2rem;
-      color: #fff;
+      border-radius: 0.5rem;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      padding: 0.875rem 1rem;
+      color: #0f172a;
       font-size: 0.95rem;
-      transition: border-color 0.2s, background-color 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.2s ease;
+      outline: none;
+
+      &::placeholder {
+        color: #94a3b8;
+      }
 
       &:focus {
-        border-color: #5db7f5;
-        background-color: rgba(0, 0, 0, 0.35);
-        outline: none;
+        border-color: #5d67f6;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(93, 103, 246, 0.1);
       }
     }
 
     select {
       appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238a8eab%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%2364748B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 1.2rem center;
-      background-size: 1.2rem;
-      padding-right: 3rem;
+      background-size: 10px 6px;
+      padding-right: 2.5rem;
+
+      &:invalid {
+        color: #94a3b8;
+      }
 
       option {
-        background: #111420;
-        color: #fff;
+        background: #ffffff;
+        color: #0f172a;
       }
     }
   }
@@ -1529,11 +1545,11 @@ em {
     display: block;
     width: 100%;
     background: #73C9F4;
-    color: #0b0e14;
+    color: #ffffff;
     font-weight: 700;
-    font-size: 1.05rem;
-    padding: 1.1rem;
-    border-radius: 6px;
+    font-size: 1rem;
+    padding: 1.15rem 2rem;
+    border-radius: 9999px;
     border: none;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
@@ -1778,12 +1794,24 @@ em {
   .s12-links {
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 768px) {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1rem 1.5rem !important;
+      width: 100% !important;
+    }
   }
 
   .s12-link {
     color: #64748b;
     text-decoration: none;
     transition: color 0.2s ease;
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      white-space: normal !important;
+    }
 
     &:hover {
       color: #ffffff;
@@ -2226,8 +2254,17 @@ em {
     }
 
     &__safer-btn {
-      width: 100%;
+      width: auto !important;
+      max-width: 90% !important;
+      margin: 0 auto !important;
       text-align: center;
+      padding: 1rem 2.2rem !important;
+      font-size: 1.05rem !important;
+
+      .btn-break {
+        display: block !important;
+        margin-top: 0.2rem;
+      }
     }
   }
 
@@ -2278,8 +2315,8 @@ em {
     }
 
     &__submit {
-      padding: 0.9rem;
-      font-size: 0.95rem;
+      padding: 1.15rem 2rem !important;
+      font-size: 1rem !important;
     }
   }
 }
