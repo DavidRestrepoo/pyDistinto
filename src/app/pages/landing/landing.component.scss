@@ -1661,7 +1661,7 @@ em {
 .session-12 {
   background-color: #0b0e14;
   color: #94a3b8;
-  padding: 2.5rem 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1796,10 +1796,9 @@ em {
     gap: 2rem;
 
     @media (max-width: 768px) {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 1rem 1.5rem !important;
-      width: 100% !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      gap: 1.5rem !important;
     }
   }
 
@@ -1811,6 +1810,7 @@ em {
 
     @media (max-width: 768px) {
       white-space: normal !important;
+      text-align: center !important;
     }
 
     &:hover {
