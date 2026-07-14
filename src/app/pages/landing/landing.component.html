@@ -20,7 +20,7 @@
     <div class="srv-hero__grid"></div>
     <div class="srv-hero__glow"></div>
     <div class="srv-hero__content">
-      <span class="srv-hero__badge"><span class="badge-dot"></span>SISTEMA DE ADQUISICIÓN<span class="badge-sep"> · </span><span class="badge-highlight">SPRINT 90 DÍAS</span></span>
+      <span class="srv-hero__badge">AGENCIA DE PERFORMANCE PARA CLÍNICAS ESTÉTICAS Y ODONTOLÓGICAS</span>
       <h1 class="srv-hero__title">
         Tu clínica merece una <span class="highlight">agenda llena</span>, no leads que nunca convierten
       </h1>
@@ -84,17 +84,17 @@
     <div class="srv-pain__header">
       <span class="srv-pain__pretitle">EL PROBLEMA QUE NADIE DICE EN VOZ ALTA</span>
       <h2 class="srv-pain__title">
-        Tu pauta genera mensajes.<br>Tu agenda sigue <span class="highlight">con huecos.</span>
+        ¿Tú pauta genera mensajes?<br>¿Tú agenda sigue <span class="highlight">con huecos?</span>
       </h2>
       <p class="srv-pain__subtitle">
-        Invertiste en Meta Ads, tienes conversaciones en WhatsApp... pero los pacientes no llegan a la silla. Esto es lo que está pasando realmente.
+        Invertiste en Meta Ads, tienes conversaciones en WhatsApp pero los pacientes no llegan a la silla. Esto es lo que está pasando realmente.
       </p>
     </div>
 
     <div class="srv-pain__cards-container">
       <div class="srv-pain__card">
         <div class="srv-pain__icon">🤯</div>
-        <h3 class="srv-pain__card-title">Leads sin intención real</h3>
+        <h3 class="srv-pain__card-title">¿Leads sin intención real?</h3>
         <p class="srv-pain__card-text">
           Mensajes de curiosos que nunca agendan. Tu equipo pierde horas calificando gente que jamás va a comprar.
         </p>
@@ -102,7 +102,7 @@
 
       <div class="srv-pain__card">
         <div class="srv-pain__icon">📬</div>
-        <h3 class="srv-pain__card-title">Agenda con ausencias</h3>
+        <h3 class="srv-pain__card-title">¿Agenda con ausencias?</h3>
         <p class="srv-pain__card-text">
           Pacientes que agendan y no asisten. Sin seguimiento automático, cada ausencia es dinero que ya no vuelve.
         </p>
@@ -110,7 +110,7 @@
 
       <div class="srv-pain__card">
         <div class="srv-pain__icon">💸</div>
-        <h3 class="srv-pain__card-title">Pauta sin retorno claro</h3>
+        <h3 class="srv-pain__card-title">¿Pauta sin retorno claro?</h3>
         <p class="srv-pain__card-text">
           Gastas en Meta Ads pero no sabes qué campaña genera pacientes reales ni cuánto te cuesta cada uno.
         </p>
@@ -118,7 +118,7 @@
 
       <div class="srv-pain__card">
         <div class="srv-pain__icon">🔄</div>
-        <h3 class="srv-pain__card-title">Dependencia de referidos</h3>
+        <h3 class="srv-pain__card-title">¿Dependencia de referidos?</h3>
         <p class="srv-pain__card-text">
           Tu clínica crece o decrece según el boca a boca. Sin un sistema, no hay crecimiento predecible ni escalable.
         </p>
@@ -345,6 +345,10 @@
           </div>
         </article>
       </div>
+
+      <div class="s9-action">
+        <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="s9-btn">Quiero resultados <span class="btn-break">como estos</span></a>
+      </div>
     </div>
   </section>
 
@@ -377,27 +381,27 @@
         <!-- Nombre & Apellidos side-by-side on desktop -->
         <div class="srv-contacto__row-2">
           <div class="srv-contacto__field">
-            <label for="nombre">Nombre *</label>
+            <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" placeholder="María" required />
           </div>
           <div class="srv-contacto__field">
-            <label for="apellidos">Apellidos *</label>
+            <label for="apellidos">Apellidos</label>
             <input type="text" id="apellidos" name="apellidos" placeholder="García" required />
           </div>
         </div>
 
         <div class="srv-contacto__field">
-          <label for="email">Correo electrónico *</label>
+          <label for="email">Correo electrónico</label>
           <input type="email" id="email" name="email" placeholder="doctor@miclinica.com" required />
         </div>
 
         <div class="srv-contacto__field">
-          <label for="whatsapp">WhatsApp *</label>
+          <label for="whatsapp">WhatsApp</label>
           <input type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 000 0000" required />
         </div>
 
         <div class="srv-contacto__field">
-          <label for="industria">¿Estás en la industria de clínicas estéticas u odontología? *</label>
+          <label for="industria">¿Tu clínica pertenece al sector estético u odontológico?</label>
           <select id="industria" name="industria" required>
             <option value="" disabled selected>Selecciona una opción</option>
             <option value="si_estetica">Sí, clínica estética</option>
@@ -407,35 +411,31 @@
         </div>
 
         <div class="srv-contacto__field">
-          <label for="presupuesto">¿Cuánto es tu presupuesto mensual para anuncios? *</label>
-          <span class="srv-contacto__field-helper">Así podremos enviarte las mejores estrategias para tu presupuesto.</span>
+          <label for="presupuesto">¿Cuánto es tu presupuesto mensual para anuncios?</label>
+          <span class="srv-contacto__field-helper">Así podremos recomendarte la estrategia más adecuada según tu presupuesto.</span>
           <select id="presupuesto" name="presupuesto" required>
             <option value="" disabled selected>Selecciona un rango</option>
-            <option value="no_inverto">A. Aún no invierto en pauta</option>
-            <option value="menos_500cop">B. Menos de $500 mil COP / mes</option>
-            <option value="500cop_1mcop">C. $500 mil a $1 millón COP / mes</option>
-            <option value="1mcop_2mcop">D. $1 millón a $2 millones COP / mes</option>
-            <option value="mas_2mcop">E. Más de $2 millones COP / mes</option>
+            <option value="menos_300">Menos de $300 USD / mes</option>
+            <option value="300_1000">$300 - $1.000 USD / mes</option>
+            <option value="1000_1500">$1.000 - $1.500 USD / mes</option>
+            <option value="mas_1500">Más de $1.500 USD / mes</option>
           </select>
         </div>
 
         <div class="srv-contacto__field">
-          <label for="facturacion">¿Cuánto es tu facturación mensual actual? *</label>
-          <span class="srv-contacto__field-helper">Así podremos enviarte un plan de acción con un impacto real en la facturación de tu negocio.</span>
+          <label for="facturacion">¿Cuánto es tu facturación mensual actual?</label>
+          <span class="srv-contacto__field-helper">Así podremos proponerte un plan de acción acorde con el tamaño y los objetivos de tu clínica.</span>
           <select id="facturacion" name="facturacion" required>
             <option value="" disabled selected>Selecciona un rango</option>
-            <option value="no_negocio">A. No he empezado aún un negocio</option>
-            <option value="empezando_ventas">B. Aún empezando en ventas</option>
-            <option value="menos_20mcop">C. Menos de $20 millones COP / mes</option>
-            <option value="20mcop_40mcop">D. $20 millones a $40 millones COP / mes</option>
-            <option value="40mcop_60mcop">E. $40 millones a $60 millones COP / mes</option>
-            <option value="60mcop_80mcop">F. $60 millones a $80 millones COP / mes</option>
-            <option value="mas_80mcop">G. Más de $80 millones COP / mes</option>
+            <option value="menos_3k">Menos de $3.000 USD / mes</option>
+            <option value="3k_5k">$3.000 - $5.000 USD / mes</option>
+            <option value="5k_10k">$5.000 - $10.000 USD / mes</option>
+            <option value="mas_10k">Más de $10.000 USD / mes</option>
           </select>
         </div>
 
         <div class="srv-contacto__field">
-          <label for="comienzo">¿Qué tan pronto te gustaría comenzar? *</label>
+          <label for="comienzo">¿Qué tan pronto te gustaría comenzar?</label>
           <select id="comienzo" name="comienzo" required>
             <option value="" disabled selected>Selecciona una opción</option>
             <option value="inmediatamente">Inmediatamente (esta semana)</option>
@@ -450,8 +450,7 @@
         </button>
 
         <p class="srv-contacto__disclaimer">
-          🔒 Tu información es confidencial y no la compartimos con nadie.<br>
-          Te contactaremos por WhatsApp en menos de 24 horas hábiles.
+          🔒 Tu información es confidencial y no la compartimos con nadie.
         </p>
       </form>
     </div>
