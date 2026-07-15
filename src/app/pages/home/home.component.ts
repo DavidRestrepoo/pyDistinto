@@ -51,6 +51,16 @@ export class HomeComponent {
   readonly menuItems = signal<string[]>(this.homeService.getMenuItems());
   readonly partnerLogos = signal<string[]>(this.homeService.getPartnerLogos());
   readonly services = signal<any[]>(this.homeService.getServices());
+  readonly logofolioLogos = signal<string[]>([
+    '/Logos/Logos-Clientes/logo-01.png',
+    '/Logos/Logos-Clientes/logo-03.png',
+    '/Logos/Logos-Clientes/logo-10.png',
+    '/Logos/Logos-Clientes/logo-04.png',
+    '/Logos/Logos-Clientes/logo-05.png',
+    '/Logos/Logos-Clientes/logo-02.png',
+    '/Logos/Logos-Clientes/logo-08.png',
+    '/Logos/Logos-Clientes/logo-09.png'
+  ]);
   readonly portfolioLogos = signal<PortfolioLogo[]>(this.homeService.getPortfolioLogos());
 
   // Computed example – active partner logos (could be filtered later)
@@ -107,6 +117,7 @@ export class HomeComponent {
       apellidos: formData.get('apellidos'),
       email: formData.get('email'),
       whatsapp: formData.get('whatsapp'),
+      clinica: formData.get('clinica'),
       industria: INDUSTRY_MAP[rawIndustria] || rawIndustria,
       presupuesto: BUDGET_MAP[rawPresupuesto] || rawPresupuesto,
       facturacion: REVENUE_MAP[rawFacturacion] || rawFacturacion,

@@ -386,6 +386,12 @@
           </div>
         </div>
 
+        <!-- Nombre de la clínica -->
+        <div class="s10-field">
+          <label class="s10-label" for="clinica">Nombre de la clínica</label>
+          <input class="s10-input" type="text" id="clinica" name="clinica" placeholder="Clínica Dental Sonrisa" required />
+        </div>
+
         <!-- Dropdown 1: ¿Estás en la industria de clínicas estéticas u odontológicas? -->
         <div class="s10-field">
           <label class="s10-label" for="industria">¿Tu clínica pertenece al sector estético u odontológico?</label>
@@ -457,7 +463,7 @@
       <h2 id="portfolio-title" class="font-headline-xl text-headline-xl uppercase mb-20">LOGOFOLIO</h2>
       <p class="portfolio-subtitle">Marcas que confían en Distinto para crecer.</p>
       <div class="portfolio-grid">
-        @for (logo of partnerLogos(); track logo) {
+        @for (logo of logofolioLogos(); track logo) {
         <div class="portfolio-logo-cell">
           <img [src]="logo" alt="Logo cliente" class="portfolio-logo-img" />
         </div>

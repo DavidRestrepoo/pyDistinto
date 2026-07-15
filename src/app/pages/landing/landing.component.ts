@@ -95,6 +95,7 @@ export class LandingComponent {
       apellidos: formData.get('apellidos'),
       email: formData.get('email'),
       whatsapp: formData.get('whatsapp'),
+      clinica: formData.get('clinica'),
       industria: INDUSTRY_MAP[rawIndustria] || rawIndustria,
       presupuesto: BUDGET_MAP[rawPresupuesto] || rawPresupuesto,
       facturacion: REVENUE_MAP[rawFacturacion] || rawFacturacion,
