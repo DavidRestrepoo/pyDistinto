@@ -24,11 +24,11 @@ export class HomeService {
       '/Logos/Logos-Clientes/logo-01.png',
       '/Logos/Logos-Clientes/logo-02.png',
       '/Logos/Logos-Clientes/logo-03.png',
-      '/Logos/Logos-Clientes/logo-04.png',
+      '/Logos/Logos-Clientes/logo-04.png?v=2',
       '/Logos/Logos-Clientes/logo-05.png',
       '/Logos/Logos-Clientes/logo-07.png',
       '/Logos/Logos-Clientes/logo-08.png',
-      '/Logos/Logos-Clientes/logo-09.png',
+      '/Logos/Logos-Clientes/logo-09.png?v=2',
       '/Logos/Logos-Clientes/logo-10.png'
     ];
   }
