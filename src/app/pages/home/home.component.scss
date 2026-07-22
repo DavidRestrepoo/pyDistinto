@@ -459,7 +459,7 @@
 /* ==== Hero Enhancements ==== */
 .hero-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 56px; /* Adjusted to fit the specific text layout */
+  font-size: 52px; /* Adjusted to fit the specific text layout */
   font-weight: 900;
   color: #FFFFFF;
   text-align: center;
@@ -1914,7 +1914,7 @@
 @media (max-width: 992px) {
   /* Sesión 2 (Hero) */
   .hero-title {
-    font-size: clamp(2.0rem, 6vw, 3.0rem) !important;
+    font-size: clamp(1.8rem, 6vw, 2.8rem) !important;
     padding: 0 1rem;
   }
   
@@ -2001,7 +2001,7 @@
   }
 
   .hero-title {
-    font-size: 1.9rem !important;
+    font-size: 1.7rem !important;
     line-height: 1.25 !important;
     br {
       display: none !important;
