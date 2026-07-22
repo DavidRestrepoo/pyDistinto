@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal, computed, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 import { HomeService, PortfolioLogo } from './services/home.service';
 
 const INDUSTRY_MAP: Record<string, string> = {
@@ -45,6 +46,8 @@ const TIMELINE_MAP: Record<string, string> = {
 export class HomeComponent {
   // Services injected via the new inject() API
   private readonly homeService = inject(HomeService);
+  private readonly titleService = inject(Title);
+  private readonly metaService = inject(Meta);
 
   // Signals holding the page data – initialized from the service (static for now)
   readonly title = signal('Distinto');
@@ -88,6 +91,17 @@ export class HomeComponent {
 
   // Simple effect just for demonstration (can be removed in prod)
   constructor() {
+    // Dynamic metadata for SEO
+    this.titleService.setTitle('Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto');
+    this.metaService.updateTag({
+      name: 'description',
+      content: 'Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días en Colombia, México y EE.UU.'
+    });
+    this.metaService.updateTag({ property: 'og:title', content: 'Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto' });
+    this.metaService.updateTag({ property: 'og:description', content: 'Construimos sistemas de adquisición automatizados con agentes de IA en WhatsApp.' });
+    this.metaService.updateTag({ property: 'og:image', content: '/Logos/distinto_logo.png' });
+    this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+
     effect(() => console.log('HomeComponent loaded – services count:', this.services().length));
   }
 
@@ -123,7 +137,6 @@ export class HomeComponent {
       facturacion: REVENUE_MAP[rawFacturacion] || rawFacturacion,
       comienzo: TIMELINE_MAP[rawComienzo] || rawComienzo
     };
-
 
     fetch(this.WEBHOOK_URL, {
       method: 'POST',
