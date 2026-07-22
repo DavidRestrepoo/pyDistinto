@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HomeService } from '../home/services/home.service';
@@ -42,10 +42,97 @@ const TIMELINE_MAP: Record<string, string> = {
   styleUrls: ['./landing.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit {
   private readonly homeService = inject(HomeService);
   readonly partnerLogos = signal<string[]>(this.homeService.getPartnerLogos());
   readonly isMobileMenuOpen = signal(false);
+
+  // Video Signals and Player
+  readonly isPlaying = signal(false);
+  private player: any = null;
+
+  ngOnInit(): void {
+    this.loadYouTubeAPI();
+  }
+
+  private loadYouTubeAPI(): void {
+    if (!(window as any).YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      
+      (window as any).onYouTubeIframeAPIReady = () => {
+        this.initPlayer();
+      };
+      
+      document.body.appendChild(tag);
+    } else {
+      this.initPlayer();
+    }
+  }
+
+  private initPlayer(): void {
+    this.player = new (window as any).YT.Player('youtube-player', {
+      width: '100%',
+      height: '100%',
+      videoId: '2hr0qWXjob8',
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        rel: 0,
+        modestbranding: 1,
+        disablekb: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        cc_load_policy: 3
+      },
+      events: {
+        onReady: (event: any) => {
+          try {
+            event.target.unloadModule('captions');
+            event.target.unloadModule('cc');
+            if (typeof event.target.setOption === 'function') {
+              event.target.setOption('captions', 'track', {});
+              event.target.setOption('cc', 'track', {});
+            }
+          } catch (e) {
+            console.error('Error unloading captions:', e);
+          }
+        },
+        onApiChange: (event: any) => {
+          try {
+            if (typeof event.target.setOption === 'function') {
+              event.target.setOption('captions', 'track', {});
+              event.target.setOption('cc', 'track', {});
+            }
+          } catch (e) {
+            console.error('Error disabling captions onApiChange:', e);
+          }
+        },
+        onStateChange: (event: any) => {
+          this.isPlaying.set(event.data === 1);
+          if (event.data === 1) {
+            try {
+              event.target.unloadModule('captions');
+              event.target.unloadModule('cc');
+              if (typeof event.target.setOption === 'function') {
+                event.target.setOption('captions', 'track', {});
+                event.target.setOption('cc', 'track', {});
+              }
+            } catch (e) {}
+          }
+        }
+      }
+    });
+  }
+
+  togglePlay(): void {
+    if (!this.player) return;
+    if (this.isPlaying()) {
+      this.player.pauseVideo();
+    } else {
+      this.player.playVideo();
+    }
+  }
 
   // Form Signals
   readonly isSuccessModalOpen = signal(false);

@@ -311,7 +311,7 @@ em {
   .client-strip-track {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 1.25rem;
     width: max-content;
     animation: scroll-marquee 25s linear infinite;
   }
@@ -331,7 +331,8 @@ em {
     &[src*="logo-05.png"] { transform: scale(1.65); }
     &[src*="logo-07.png"] { transform: scale(0.98); }
     &[src*="logo-08.png"] { transform: scale(0.85); }
-    &[src*="logo-09.png"] { transform: scale(0.85); }
+    &[src*="logo-09.png"] { transform: scale(0.65); }
+    &[src*="logo-10.png"] { transform: scale(0.7); }
   }
 }
 
@@ -388,16 +389,61 @@ em {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 
-    video {
+    .youtube-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      pointer-events: none; // Block click-throughs to youtube.com
 
-      &::-webkit-media-controls-settings-button,
-      &::-webkit-media-controls-overflow-button {
-        display: none !important;
+      iframe {
+        width: 100% !important;
+        height: 100% !important;
+        border: none;
       }
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background: rgba(10, 13, 20, 0.4);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 2.5rem;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: rgba(10, 13, 20, 0.15);
+
+        .video-status {
+          color: #ffffff;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+      }
+
+      &.is-playing {
+        background: transparent;
+        pointer-events: none;
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    .video-status {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #a0a8d0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -551,7 +597,7 @@ em {
   }
 
   &__subtitle {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: #8a8eab;
     line-height: 1.6;
     max-width: 720px;
@@ -1191,50 +1237,48 @@ em {
 //  S10 — FORMULARIO DE DIAGNÓSTICO
 // ═══════════════════════════════════════════════════════════════════
 .srv-contacto {
-  padding: 2.5rem 2rem 6rem;
-  background: #0b0e14;
+  padding: 5rem 2rem 6rem;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__container {
     width: 100%;
-    max-width: 680px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
   &__header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   &__title {
-    display: inline-block;
-    background-color: #eff1fe;
-    border: 1px solid rgba(99, 102, 241, 0.15);
-    color: #5d67f6;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    margin: 0 0 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    color: #0a0a0a;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem;
+
+    .highlight {
+      color: #5db7f5;
+    }
   }
 
   &__subtitle {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.05rem;
-    color: #8a8eab;
-    margin: 0;
+    font-weight: 500;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   &__form {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 3.5rem 3rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -1792,7 +1836,7 @@ em {
     }
 
     &__subtitle {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
     }
 
     &__steps {
@@ -2032,19 +2076,25 @@ em {
   }
 
   .srv-contacto {
-    padding: 1.5rem 1rem 3.5rem;
+    padding: 3rem 1rem 4rem;
 
     &__header {
       margin-bottom: 2rem;
     }
 
     &__title {
-      font-size: 0.65rem !important;
+      font-size: 1.85rem;
+    }
+
+    &__subtitle {
+      font-size: 0.95rem;
     }
 
     &__form {
-      padding: 2.5rem 1.5rem;
-      border-radius: 12px;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
       gap: 1.25rem;
     }
 

@@ -130,7 +130,7 @@
 .client-strip-track {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1.25rem;
   width: max-content;
   animation: scroll-marquee 25s linear infinite;
 }
@@ -150,7 +150,8 @@
   &[src*="logo-05.png"] { transform: scale(1.65); }
   &[src*="logo-07.png"] { transform: scale(0.98); }
   &[src*="logo-08.png"] { transform: scale(0.85); }
-  &[src*="logo-09.png"] { transform: scale(0.85); }
+  &[src*="logo-09.png"] { transform: scale(0.65); }
+  &[src*="logo-10.png"] { transform: scale(0.7); }
 }
 
 @keyframes scroll-marquee {

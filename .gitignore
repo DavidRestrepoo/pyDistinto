@@ -49,3 +49,4 @@ chat_history.txt
 
 # Ignore large media assets (to avoid exceeding GitHub's 100MB file limit)
 public/*.mp4
+vsl/

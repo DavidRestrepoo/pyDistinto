@@ -68,13 +68,16 @@
         Te explicamos exactamente por qué tu pauta no está llenando tu agenda, y cómo lo resolvemos
       </p>
 
-      <div class="srv-nadie__video-card">
-        <div class="play-button">
-          <svg class="play-icon" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" fill="currentColor"></path>
-          </svg>
+      <div class="srv-nadie__video-card custom-youtube-container">
+        <div class="youtube-iframe">
+          <div id="youtube-player"></div>
         </div>
-        <span class="video-status">Video — próximamente</span>
+
+        <div class="video-overlay" [class.is-playing]="isPlaying()" (click)="togglePlay()">
+          @if (!isPlaying()) {
+            <span class="video-status">Ver Video Informativo</span>
+          }
+        </div>
       </div>
     </div>
   </section>
@@ -135,10 +138,10 @@
     <div class="srv-capas__header">
       <span class="srv-capas__pretitle">LA SOLUCIÓN</span>
       <h2 class="srv-capas__title">
-        Un sistema en 3 capas que convierte tráfico en <span class="highlight">pacientes calificados</span>
+        El sistema que convierte tráfico en <span class="highlight">pacientes calificados</span>
       </h2>
       <p class="srv-capas__subtitle">
-        No es publicidad suelta. Es infraestructura de adquisición completa, integrada y con datos reales.
+        Un sistema de 3 fases que trabajan juntos para llenar tu agenda de forma automática.
       </p>
     </div>
 
@@ -357,26 +360,18 @@
   <!-- ═══════════════════════════════════════════════════════════════════
        S9 — CTA FINAL ELEGANTE
        ═══════════════════════════════════════════════════════════════════ -->
-  <section class="srv-final-cta">
-    <a (click)="scrollTo('contacto'); $event.preventDefault();" href="#contacto" class="srv-final-cta__card">
-      <span class="srv-final-cta__pretitle">EMPECEMOS</span>
-      <h2 class="srv-final-cta__title">
-        ¿Tu clínica está lista para <span class="highlight">llenar su agenda?</span>
-      </h2>
-      <p class="srv-final-cta__text">
-        Si somos un buen match, agendamos una sesión de diagnóstico gratuita y te decimos exactamente qué construiríamos para ti.
-      </p>
-    </a>
-  </section>
-
   <!-- ═══════════════════════════════════════════════════════════════════
        S10 — FORMULARIO DE DIAGNÓSTICO
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="srv-contacto" id="contacto">
     <div class="srv-contacto__container">
       <div class="srv-contacto__header">
-        <h2 class="srv-contacto__title">Cuéntanos sobre ti</h2>
-        <p class="srv-contacto__subtitle">Tarda menos de 3 minutos · Te respondemos en menos de 24 horas</p>
+        <h2 class="srv-contacto__title">
+          ¿Tu clínica está lista para <span class="highlight">llenar su agenda?</span>
+        </h2>
+        <p class="srv-contacto__subtitle">
+          Completa el formulario y en menos de 24 horas te contactamos con un plan de acción personalizado.
+        </p>
       </div>
 
       <form class="srv-contacto__form" (submit)="onSubmit($event)">
@@ -453,7 +448,7 @@
         </div>
 
         <button type="submit" class="srv-contacto__submit" [disabled]="isSubmitting()">
-          {{ isSubmitting() ? 'Enviando...' : 'Solicitar diagnóstico gratuito' }}
+          {{ isSubmitting() ? 'Enviando...' : 'Quiero mi sistema de adquisición' }}
         </button>
 
         <p class="srv-contacto__disclaimer">
