@@ -1914,7 +1914,7 @@
 @media (max-width: 992px) {
   /* Sesión 2 (Hero) */
   .hero-title {
-    font-size: clamp(2.2rem, 6vw, 3.2rem) !important;
+    font-size: clamp(2.0rem, 6vw, 3.0rem) !important;
     padding: 0 1rem;
   }
   
@@ -1997,11 +1997,11 @@
   /* Sesión 2: Hero */
   .hero-shell {
     min-height: auto !important;
-    padding: 4rem 1rem 5rem !important;
+    padding: 2rem 1rem 5rem !important;
   }
 
   .hero-title {
-    font-size: 2.1rem !important;
+    font-size: 1.9rem !important;
     line-height: 1.25 !important;
     br {
       display: none !important;
