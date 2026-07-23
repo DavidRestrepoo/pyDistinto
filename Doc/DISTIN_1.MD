@@ -1,114 +1,114 @@
-# Distinto Agencia — Metadata / SEO y Keywords
+# Distinto Agencia — Metadata / SEO y Keywords (solo backend)
 
-**Propósito:** instrucciones y parámetros para que el agente del proyecto implemente metadata (title, description, keywords, schema, contenido) en www.distintoagencia.com orientada a posicionamiento orgánico en Google.
+**Propósito:** instrucciones y parámetros para que el agente del proyecto implemente SEO técnico (metadata, schema, keywords) en **www.distintoagencia.com** orientado a posicionamiento orgánico en Google.
 
-**Sitios analizados:** www.distintoagencia.com/home y /landing
-**Fecha de análisis:** 2026-07-20
+**Sitio en alcance:** únicamente `www.distintoagencia.com` (home). **Se excluye `/landing`** de este trabajo.
+**Fecha de análisis:** 2026-07-22
 **Vigencia recomendada:** revisar cada 3 meses (cambios de tráfico/algoritmo)
 
 ---
 
-## 1. Contexto de negocio (extraído del sitio)
+## 0. Regla no negociable: SOLO CÓDIGO / BACKEND, CERO CAMBIOS VISIBLES
+
+**No se toca nada que el visitante vea al navegar el sitio.** Este trabajo es 100% invisible para el usuario final — vive en el `<head>` del HTML, en atributos de código y en archivos de configuración. Nada de lo siguiente se modifica: textos, encabezados, botones, formularios, imágenes, orden de secciones, menú de navegación. **No se crean páginas nuevas ni se agrega copy nuevo visible en el sitio.**
+
+### ✅ Sí se puede tocar (código/backend, invisible en pantalla)
+
+| Elemento | Por qué es "invisible" |
+|---|---|
+| `<title>` del `<head>` | No aparece en el cuerpo de la página; se ve en la pestaña del navegador y en el resultado de Google |
+| `<meta name="description">` | No se renderiza en la página; solo aparece como snippet en resultados de Google |
+| `<meta name="keywords">` (si aplica) | Metadato interno, no se muestra en pantalla |
+| Open Graph / Twitter Card (`og:title`, `og:description`, `og:image`) | Viven en el `<head>`; solo se ven al compartir el link en redes/WhatsApp, no al navegar el sitio |
+| JSON-LD / Schema.org (Organization, ProfessionalService, LocalBusiness) | Datos estructurados, invisibles; solo los leen los buscadores |
+| Atributo `alt` de imágenes ya existentes | No se muestra en pantalla; lo leen buscadores y lectores de accesibilidad |
+| Atributo `title` de enlaces (tooltip) | No visible salvo hover, no es contenido de la página |
+| `canonical`, `hreflang` | Metadatos de indexación, invisibles |
+| `robots.txt`, `sitemap.xml` | Archivos de configuración, no forman parte del sitio visible |
+| Google Search Console / Google Business Profile | Herramientas externas, no tocan el código ni el diseño del sitio |
+
+### 🚫 Nunca se toca
+
+- Títulos (H1/H2/H3), párrafos, textos de botones y formularios visibles en pantalla
+- Imágenes, logos, fotos de casos de éxito
+- Estructura de menú, navegación o footer visibles
+- Creación de páginas nuevas con contenido/copy visible (ej. no se crea un blog ni landing por ciudad)
+- Cualquier elemento que cambie lo que el cliente/visitante ve al entrar al sitio
+
+---
+
+## 1. Contexto de negocio (extraído del sitio, solo para orientar las keywords — no se reescribe nada de esto)
 
 - **Nombre:** Distinto Agencia Creativa
-- **Ubicación base:** Medellín, Colombia (opera también Colombia & EE.UU. según footer de landing)
+- **Ubicación base:** Medellín, Colombia
 - **Categoría:** Agencia de performance / marketing digital especializada
 - **Nicho (vertical objetivo):** clínicas estéticas y consultorios/clínicas odontológicas
 - **Países objetivo:** Colombia, México, Ecuador, Estados Unidos (mercado hispano/latino)
 
-### Propuesta de valor central
+### Propuesta de valor central (referencia, no se edita)
 
-"Sistema de adquisición de pacientes de alto valor" — no venden publicidad suelta, venden un sistema completo de 3 fases:
+"Sistema de adquisición de pacientes de alto valor" en un sprint de 90 días, con 3 fases: diagnóstico y reestructuración de oferta; Meta Ads precalificados + landing con formulario de calificación + agente de IA en WhatsApp; reportes semanales y optimización continua.
 
-1. **Fase 1:** Diagnóstico y reestructuración de oferta (para que la clínica venda más)
-2. **Fase 2:** Meta Ads precalificados + Landing page con formulario de calificación + Agente de IA en WhatsApp que califica y agenda 24/7
-3. **Fase 3:** Reportes semanales, KPIs y optimización continua
-
-Formato de entrega: "Sprint de 90 días"
-
-### Servicios detectados (pilares de contenido/keywords)
+### Servicios detectados (para orientar qué keywords priorizar en metadata)
 
 - Meta Ads precalificados (Facebook e Instagram Ads para clínicas)
 - Landing page de conversión con formulario de calificación de leads
 - Agente de IA en WhatsApp (calificación y agendamiento automático 24/7)
 - Creatividad publicitaria (anuncios, landing, WhatsApp)
 - Reportes y optimización (dashboards, costo por lead/agendamiento/paciente)
-- Proceso de cierre comercial (guiones de venta para convertir consultas en tratamientos)
+- Proceso de cierre comercial
 
-### Dolores del cliente ideal (ángulos de keywords informacionales/blog)
+### Dolores del cliente ideal (para elegir keywords informacionales de metadata, no para crear contenido nuevo)
 
 - Leads o mensajes de WhatsApp sin intención real de comprar
 - Agenda con ausencias / pacientes que no asisten (no-shows)
-- Inversión en Meta Ads sin retorno claro / no saber costo por paciente real
-- Dependencia total de referidos / boca a boca, sin sistema de crecimiento predecible
+- Inversión en Meta Ads sin retorno claro
+- Dependencia total de referidos / boca a boca
 
 ### Público objetivo (buyer persona)
 
 - Dueños, directores y administradores de clínicas estéticas y odontológicas
 - Presupuesto mensual de pauta: desde <$300 USD hasta +$1.500 USD/mes
 - Facturación mensual de la clínica: desde <$3.000 hasta +$10.000 USD/mes
-- Nivel de intención: desde "explorando" hasta "quiere empezar esta semana"
 
-### Diagnóstico SEO actual del sitio (hallazgo importante)
+### Diagnóstico SEO técnico actual del sitio
 
-- El sitio **no tiene** meta title ni meta description personalizados por página (solo title genérico "Distinto | Agencia Creativa" y viewport tag).
+- El sitio **no tiene** meta title ni meta description personalizados (solo title genérico "Distinto | Agencia Creativa" y viewport tag).
 - No se detectó meta keywords, ni Open Graph, ni structured data (schema.org).
-- Oportunidad grande: todo el trabajo de metadata parte de cero, no hay que corregir sino construir desde cero title/description/schema por URL.
+- Oportunidad: todo el trabajo de metadata parte de cero. Se implementa por primera vez, no se corrige nada existente que sea visible.
 
 ---
 
-## 2. Arquitectura de URLs sugerida
-
-Crear/usar páginas o secciones dedicadas por combinación vertical + país (o al menos por vertical, con mención de ciudades dentro del copy) para capturar intención de búsqueda local:
-
-| Ruta | Estado |
-|---|---|
-| `/home` | genérica agencia (ya existe) |
-| `/landing` | landing de conversión (ya existe) |
-| `/clinicas-esteticas` | pilar vertical estética (sugerido) |
-| `/clinicas-odontologicas` | pilar vertical odontología (sugerido) |
-| `/clinicas-esteticas/colombia` `/mexico` `/ecuador` `/usa` | opcional, si el volumen de tráfico lo justifica |
-| `/blog/...` | contenido informacional (ver sección 5) |
-
-Si no se crean sub-páginas por país, usar el mismo `/clinicas-esteticas` y `/clinicas-odontologicas` y mencionar las ciudades principales dentro del copy visible (H2/H3) y en el meta description, alternando por campaña de pauta o por bloque de contenido.
-
----
-
-## 3. Metadata sugerida por página (title / description)
+## 2. Metadata técnica a implementar en www.distintoagencia.com (única página en alcance)
 
 **Reglas generales:**
 
 - Title: 50-60 caracteres, marca al final, keyword principal al inicio.
 - Description: 140-160 caracteres, incluir keyword + beneficio + CTA.
-- Un H1 único por página con la keyword principal.
-- Usar variaciones de "clínica estética" / "clínica dental" / "consultorio odontológico" (todas se buscan, no elegir solo una).
+- Todo esto se implementa en el `<head>` del HTML — no se toca el H1 visible ni ningún texto del `<body>`.
 
-**`/home`**
-- Title: `Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto`
-- Description: `Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días. Colombia, México, Ecuador y EE.UU.`
+**`<title>` sugerido:**
+`Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto`
 
-**`/landing`**
-- Title: `Llena la Agenda de tu Clínica con Pacientes Calificados | Distinto`
-- Description: `Deja de pagar por leads que no agendan. Sistema de Meta Ads + landing + IA en WhatsApp para clínicas estéticas y dentales. Solicita tu diagnóstico gratis.`
+**`<meta name="description">` sugerida:**
+`Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días. Colombia, México, Ecuador y EE.UU.`
 
-**`/clinicas-esteticas`** (sugerida)
-- Title: `Marketing para Clínicas Estéticas | Más Pacientes Calificados`
-- Description: `Agencia de performance para medicina y clínicas estéticas. Meta Ads, landing pages y WhatsApp con IA para agendar pacientes reales, no solo mensajes.`
+**`<meta name="keywords">` sugerida (opcional, bajo impacto real en Google pero inocua):**
+`agencia de marketing para clínicas estéticas, marketing para clínicas odontológicas, meta ads para clínicas, agente de ia whatsapp clínicas, leads calificados clínica dental`
 
-**`/clinicas-odontologicas`** (sugerida)
-- Title: `Marketing para Clínicas y Consultorios Odontológicos | Distinto`
-- Description: `Sistema de captación de pacientes para clínicas dentales: Meta Ads precalificados, landing de conversión y agente IA en WhatsApp que agenda citas 24/7.`
+**Open Graph / Twitter Card sugeridos:**
+- `og:title`: igual al `<title>`
+- `og:description`: igual al meta description
+- `og:image`: usar el logo o una imagen ya existente del sitio (no crear una nueva imagen visible)
+- `og:locale`: `es_CO` (o alternar según campaña: es_MX, es_EC, en_US)
 
 ---
 
-## 4. Keywords objetivo (agrupadas por intención de búsqueda)
+## 3. Keywords objetivo (para usar SOLO en metadata, schema y atributos alt — nunca en el copy visible)
 
-> Dueños/administradores de clínicas buscan en 3 capas de intención — informacional (aprender), comparativa (evaluar opciones/agencias) y transaccional (contratar ya). Las 3 deben cubrirse.
-> **Prioridad de vertical: peso igual entre estética y odontología.**
+> Dueños/administradores de clínicas buscan en 3 capas de intención — informacional, comparativa y transaccional. Prioridad de vertical: **peso igual entre estética y odontología.**
 
-### 4.1 Keywords transaccionales (alta prioridad — home/landing/servicios)
-
-Genéricas (sin ciudad):
+### 3.1 Keywords transaccionales (van en title/description/schema)
 
 - agencia de marketing para clínicas estéticas
 - agencia de marketing para clínicas dentales / odontológicas
@@ -121,45 +121,37 @@ Genéricas (sin ciudad):
 - Meta Ads para dentistas / clínicas dentales
 - agente de IA para WhatsApp clínicas
 - automatizar agendamiento de citas clínica dental/estética
-- leads calificados para clínicas estéticas
-- leads calificados para clínicas dentales
+- leads calificados para clínicas estéticas / dentales
 - sistema de captación de pacientes
 - cuánto cuesta una campaña de Meta Ads para clínica estética/dental
 - agencia de publicidad para médicos estéticos
 - agencia de marketing para odontólogos
 
-Con ciudad (patrón `[keyword] en [ciudad]`; aplicar a las listas de la sección 6 según país):
+Con ciudad (patrón `[keyword] en [ciudad]`; usar en variantes de meta description por campaña, en `areaServed` del schema, o en `alt` de imágenes ya existentes — nunca en el copy visible de la página):
 
 - agencia de marketing para clínicas estéticas en [ciudad]
 - marketing para consultorios odontológicos en [ciudad]
 - Meta Ads para clínicas dentales en [ciudad]
-- conseguir pacientes clínica estética [ciudad]
 
-### 4.2 Keywords comparativas (blog / secciones "por qué nosotros")
+### 3.2 Keywords comparativas (para variantes de meta description en pruebas A/B de snippet de Google, no para contenido nuevo)
 
 - mejor agencia de marketing para clínicas estéticas
 - mejor agencia de marketing dental
-- agencia de marketing para clínicas vs freelancer
 - Meta Ads vs Google Ads para clínicas estéticas
 - cómo elegir agencia de marketing para mi clínica
-- agencia de marketing médico con garantía de resultados
 
-### 4.3 Keywords informacionales (contenido de blog, alimentan el funnel)
-
-Ligadas directamente a los 4 dolores detectados en el sitio:
+### 3.3 Keywords informacionales (para `alt` text de imágenes existentes y metadatos, no para crear blog)
 
 - por qué mi pauta en Meta Ads no llena mi agenda
 - cómo calificar leads de WhatsApp para mi clínica
 - cómo reducir inasistencias / no-shows en citas médicas
 - cómo saber el costo real por paciente en marketing digital
 - cómo dejar de depender de referidos en mi clínica
-- cómo automatizar el agendamiento de pacientes con IA
-- qué es un embudo de ventas para clínicas estéticas/dentales
-- cómo estructurar la oferta de mi clínica para vender más
 - KPIs de marketing para clínicas (costo por lead, por agendamiento, por paciente)
-- guiones de venta para consultas de tratamientos estéticos/dentales
 
-### 4.4 Keywords "cerca de mí" / locales (Google Business Profile y landing por ciudad)
+> Nota: en un proyecto de SEO normal estas keywords informacionales alimentarían un blog. Como el alcance actual prohíbe agregar contenido visible nuevo, quedan documentadas aquí como **banco de keywords para una futura fase de contenido**, si el cliente decide habilitar cambios visibles más adelante.
+
+### 3.4 Keywords "cerca de mí" / locales (para schema `LocalBusiness`/`areaServed`, no para texto visible)
 
 - agencia de marketing para clínicas cerca de mí
 - consultorio odontológico marketing digital [ciudad]
@@ -167,26 +159,7 @@ Ligadas directamente a los 4 dolores detectados en el sitio:
 
 ---
 
-## 5. Temas de blog sugeridos
-
-Contenido de soporte, 1 keyword informacional por post:
-
-1. "Por qué tu pauta en Meta Ads genera mensajes pero no llena tu agenda"
-2. "Cómo filtrar leads de WhatsApp antes de que lleguen a tu recepción"
-3. "Guía: cómo reducir las inasistencias en tu clínica estética/dental"
-4. "Cuánto deberías invertir en Meta Ads según la facturación de tu clínica"
-5. "Agente de IA en WhatsApp: cómo funciona el agendamiento automático 24/7"
-6. "Referidos vs sistema de adquisición: por qué el boca a boca no basta"
-7. "Cómo calcular el costo por paciente real (no solo el costo por lead)"
-8. "Checklist: ¿tu clínica está lista para escalar su pauta digital?"
-
-Cada post debe llevar meta title/description con la keyword informacional correspondiente y un CTA interno hacia `/landing`.
-
----
-
-## 6. Ciudades prioritarias por país
-
-Para keywords locales y segmentación de campañas.
+## 4. Ciudades prioritarias por país (uso: schema `areaServed`, variantes de meta description, hreflang — no en el copy visible)
 
 **Colombia:** Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena, Pereira, Manizales, Santa Marta, Cúcuta
 
@@ -196,9 +169,7 @@ Para keywords locales y segmentación de campañas.
 
 **Estados Unidos** (ciudades con mayor población latina/hispana): Miami, Orlando, Tampa, Hialeah, Houston, Dallas, San Antonio, El Paso, Los Ángeles, San Diego, San Jose, Nueva York, Chicago, Newark, Jersey City
 
-**Uso recomendado:** no crear una URL por cada ciudad si el volumen no lo justifica. Priorizar las 4-5 ciudades de mayor tráfico/gasto en pauta por país dentro de meta description, H2 de la landing y campañas de Meta Ads, y dejar el resto como menciones dentro del copy o en contenido de blog.
-
-*Nota:* en EE.UU. la lista es más extensa (15 ciudades); agrupar por región si se necesita priorizar campañas:
+*Agrupación por región para priorizar en schema/segmentación:*
 - Florida: Miami / Orlando / Tampa / Hialeah
 - Texas: Houston / Dallas / San Antonio / El Paso
 - California: Los Ángeles / San Diego / San Jose
@@ -207,30 +178,39 @@ Para keywords locales y segmentación de campañas.
 
 ---
 
-## 7. Schema / datos estructurados (implementación técnica sugerida)
+## 5. Schema / datos estructurados (JSON-LD — 100% invisible, se inserta en el `<head>` o antes del `</body>` sin renderizar nada)
 
-- Tipo: `Organization` + `ProfessionalService` (schema.org) en `/home`
-- Incluir: `name`, `url`, `logo`, `sameAs` (Instagram, Facebook, TikTok del footer), `areaServed`: ["Colombia", "México", "Ecuador", "Estados Unidos"]
-- En `/landing` y páginas de vertical: agregar `FAQPage` schema si se añade sección de preguntas frecuentes (ayuda a ganar featured snippets).
-- Abrir Open Graph tags (`og:title`, `og:description`, `og:image`) para que los links compartidos en WhatsApp/redes se vean bien — no existen hoy.
-
----
-
-## 8. Instrucciones directas para el agente del proyecto
-
-1. Implementar `<title>` y `<meta name="description">` únicos en `/home`, `/landing` y cualquier página nueva de vertical, usando los textos de la sección 3 como base (ajustar longitud si es necesario).
-2. Insertar las keywords transaccionales de 4.1 de forma natural en H1, H2 y primeros 100 palabras del copy visible (no keyword stuffing).
-3. Añadir Open Graph + Twitter Card tags básicos (título, descripción, imagen) en todas las páginas públicas.
-4. Agregar schema.org Organization/ProfessionalService en `/home` (ver sección 7).
-5. Si se crean páginas de vertical (`/clinicas-esteticas`, `/clinicas-odontologicas`), enlazarlas desde el menú de navegación y desde el footer.
-6. Crear/priorizar el blog con los 8 temas de la sección 5, publicando con metadata propia por artículo.
-7. Verificar y completar la ficha de Google Business Profile de Distinto (categoría: agencia de marketing, área de servicio: los 4 países).
-8. Configurar Google Search Console y enviar sitemap.xml actualizado una vez creadas las páginas nuevas.
-9. Revisar cada 3 meses el rendimiento de estas keywords en Search Console y ajustar según posiciones/impresiones reales.
+- Tipo: `Organization` + `ProfessionalService`
+- Incluir: `name`, `url`, `logo`, `sameAs` (Instagram, Facebook, TikTok ya existentes en el footer), `areaServed`: ["Colombia", "México", "Ecuador", "Estados Unidos"] con las ciudades de la sección 4 como sub-listado.
+- No agregar `FAQPage` schema (requeriría una sección visible de preguntas frecuentes que hoy no existe — fuera de alcance por la regla 0).
 
 ---
 
-## 9. Fuentes de referencia (research de mercado, no del sitio propio)
+## 6. Otros elementos técnicos (backend, sin impacto visible)
+
+- **`robots.txt`**: verificar que permita rastreo de `www.distintoagencia.com` (excluir `/landing` de indexación si se quiere mantener esa página fuera de este esfuerzo SEO, usando `noindex` en su meta robots).
+- **`sitemap.xml`**: incluir `www.distintoagencia.com` con prioridad alta.
+- **`canonical`**: `<link rel="canonical" href="https://www.distintoagencia.com/">` para evitar duplicidad con `/home`.
+- **`hreflang`** (opcional si se segmenta por país en el futuro sin crear páginas nuevas): no aplica todavía porque no hay URLs por país; queda documentado para cuando se habilite esa fase.
+- **Google Search Console**: verificar propiedad y enviar sitemap actualizado.
+- **Google Business Profile**: completar/verificar ficha de Distinto (categoría: agencia de marketing, área de servicio: los 4 países) — esto vive fuera del sitio web, no representa ningún cambio visible en el código del sitio.
+
+---
+
+## 7. Instrucciones directas para el agente del proyecto
+
+1. Implementar `<title>` y `<meta name="description">` en `www.distintoagencia.com` usando los textos de la sección 2 — **solo en el `<head>`, sin tocar ningún texto del `<body>`**.
+2. Agregar Open Graph + Twitter Card tags básicos (sección 2) — invisibles al navegar el sitio.
+3. Insertar JSON-LD de Organization/ProfessionalService (sección 5) antes de `</body>` o en el `<head>`, sin generar ningún elemento visual.
+4. Revisar y, si aplica, completar atributos `alt` de imágenes **ya existentes** con las keywords informacionales/locales de la sección 3 — sin cambiar la imagen ni agregar imágenes nuevas.
+5. Configurar `canonical` y revisar `robots.txt`/`sitemap.xml` (sección 6).
+6. Verificar/completar Google Search Console y Google Business Profile (fuera del código del sitio).
+7. **No crear páginas nuevas, no modificar textos, títulos, botones, formularios ni imágenes visibles. Cualquier cambio debe ser verificable únicamente viendo el código fuente (`Ver código fuente` / DevTools), nunca al navegar el sitio normalmente.**
+8. Revisar cada 3 meses el rendimiento de estas keywords en Search Console y ajustar el `<title>`/`<meta description>` según posiciones/impresiones reales (sigue siendo un cambio de código, no de contenido visible).
+
+---
+
+## 8. Fuentes de referencia (research de mercado, no del sitio propio)
 
 - [conseguirpacientes.com](https://conseguirpacientes.com/)
 - [imparables.agency/seo-clinicas-esteticas](https://imparables.agency/seo-clinicas-esteticas/)

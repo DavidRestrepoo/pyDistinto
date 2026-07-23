@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal, computed, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 import { HomeService, PortfolioLogo } from './services/home.service';
 
 const INDUSTRY_MAP: Record<string, string> = {
@@ -45,6 +46,8 @@ const TIMELINE_MAP: Record<string, string> = {
 export class HomeComponent {
   // Services injected via the new inject() API
   private readonly homeService = inject(HomeService);
+  private readonly titleService = inject(Title);
+  private readonly metaService = inject(Meta);
 
   // Signals holding the page data – initialized from the service (static for now)
   readonly title = signal('Distinto');
@@ -89,6 +92,124 @@ export class HomeComponent {
   // Simple effect just for demonstration (can be removed in prod)
   constructor() {
     effect(() => console.log('HomeComponent loaded – services count:', this.services().length));
+
+    // Set Page Title
+    this.titleService.setTitle('Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto');
+
+    // Set Meta Tags
+    this.metaService.addTags([
+      { name: 'description', content: 'Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días. Colombia, México, Ecuador y EE.UU.' },
+      { name: 'keywords', content: 'agencia de marketing para clínicas estéticas, marketing para clínicas odontológicas, meta ads para clínicas, agente de ia whatsapp clínicas, leads calificados clínica dental' },
+      { name: 'robots', content: 'index, follow' },
+
+      // Open Graph Tags
+      { property: 'og:title', content: 'Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto' },
+      { property: 'og:description', content: 'Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días. Colombia, México, Ecuador y EE.UU.' },
+      { property: 'og:image', content: 'https://www.distintoagencia.com/Logos/distinto_logo.png' },
+      { property: 'og:url', content: 'https://www.distintoagencia.com/' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:locale', content: 'es_CO' },
+
+      // Twitter Card Tags
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Agencia de Marketing para Clínicas Estéticas y Odontológicas | Distinto' },
+      { name: 'twitter:description', content: 'Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días. Colombia, México, Ecuador y EE.UU.' },
+      { name: 'twitter:image', content: 'https://www.distintoagencia.com/Logos/distinto_logo.png' }
+    ]);
+
+    // Inject technical SEO tags (Canonical, Schema JSON-LD)
+    this.injectTechnicalSEO();
+  }
+
+  private injectTechnicalSEO(): void {
+    // Inject Canonical Link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', 'https://www.distintoagencia.com/');
+      document.head.appendChild(canonicalLink);
+    } else {
+      canonicalLink.setAttribute('href', 'https://www.distintoagencia.com/');
+    }
+
+    // Inject JSON-LD Schema
+    const schemaId = 'seo-jsonld-schema';
+    let schemaScript = document.getElementById(schemaId);
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.setAttribute('id', schemaId);
+      schemaScript.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(schemaScript);
+    }
+
+    const schemaData = {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      'name': 'Distinto Agencia de Performance',
+      'url': 'https://www.distintoagencia.com',
+      'logo': 'https://www.distintoagencia.com/Logos/distinto_logo.png',
+      'image': 'https://www.distintoagencia.com/Logos/distinto_logo.png',
+      'description': 'Sistema de captación de pacientes con Meta Ads, landing pages y agente IA en WhatsApp. Agenda pacientes calificados en 90 días. Colombia, México, Ecuador y EE.UU.',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Medellín',
+        'addressCountry': 'CO'
+      },
+      'sameAs': [
+        'https://www.instagram.com/distinto.agencia',
+        'https://www.tiktok.com/@distinto.agencia'
+      ],
+      'areaServed': [
+        {
+          '@type': 'AdministrativeArea',
+          'name': 'Colombia',
+          'containsPlace': [
+            { '@type': 'City', 'name': 'Bogotá' },
+            { '@type': 'City', 'name': 'Medellín' },
+            { '@type': 'City', 'name': 'Cali' },
+            { '@type': 'City', 'name': 'Barranquilla' },
+            { '@type': 'City', 'name': 'Bucaramanga' },
+            { '@type': 'City', 'name': 'Cartagena' }
+          ]
+        },
+        {
+          '@type': 'AdministrativeArea',
+          'name': 'México',
+          'containsPlace': [
+            { '@type': 'City', 'name': 'Ciudad de México' },
+            { '@type': 'City', 'name': 'Monterrey' },
+            { '@type': 'City', 'name': 'Guadalajara' },
+            { '@type': 'City', 'name': 'Puebla' },
+            { '@type': 'City', 'name': 'Tijuana' }
+          ]
+        },
+        {
+          '@type': 'AdministrativeArea',
+          'name': 'Ecuador',
+          'containsPlace': [
+            { '@type': 'City', 'name': 'Guayaquil' },
+            { '@type': 'City', 'name': 'Quito' },
+            { '@type': 'City', 'name': 'Cuenca' }
+          ]
+        },
+        {
+          '@type': 'AdministrativeArea',
+          'name': 'Estados Unidos',
+          'containsPlace': [
+            { '@type': 'City', 'name': 'Miami' },
+            { '@type': 'City', 'name': 'Orlando' },
+            { '@type': 'City', 'name': 'Tampa' },
+            { '@type': 'City', 'name': 'Houston' },
+            { '@type': 'City', 'name': 'Dallas' },
+            { '@type': 'City', 'name': 'Los Ángeles' },
+            { '@type': 'City', 'name': 'Nueva York' }
+          ]
+        }
+      ]
+    };
+
+    schemaScript.textContent = JSON.stringify(schemaData);
   }
 
   // Scroll to services section – similar to previous onLearnMore
